@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 namespace RabbidsCoding
 {
     void InteractableObject::interact()
