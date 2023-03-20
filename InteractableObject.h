@@ -1,4 +1,5 @@
-class InteractableObject{
-    public :
-        void interact();
+class InteractableObject
+{
+public:
+    void interact();
 };
