@@ -1,10 +1,10 @@
+#include "./Objects/Interactable/Header/InteractableObject.h"
 #include <iostream>
-#include <InteractableObject.h>
 
 using namespace std;
 
-class ObjectFactory{
-	public :
-		static InteractableObject CreateObject(string ObjectName);
-		
+class ObjectFactory
+{
+public:
+	InteractableObject *CreateObject(string ObjectName);
 };
