@@ -1,6 +1,4 @@
-#include <iostream>
-#include "./Header/InteractableObject.h"
-#include "./Header/SedotWC.h"
+#include "SedotWC.hpp"
 
 using namespace std;
 

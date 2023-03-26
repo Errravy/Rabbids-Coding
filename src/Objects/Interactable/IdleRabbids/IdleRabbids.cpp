@@ -1,6 +1,4 @@
-#include <iostream>
-#include "./Header/InteractableObject.h"
-#include "./Header/IdleRabbids.h"
+#include "IdleRabbids.h"
 
 using namespace std;
 

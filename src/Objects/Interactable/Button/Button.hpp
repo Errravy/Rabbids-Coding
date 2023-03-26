@@ -1,5 +1,5 @@
-#include <iostream>
-#include "InteractableObject.h"
+#pragma once
+#include "../InteractableObject.hpp"
 
 class Button : public InteractableObject
 {
