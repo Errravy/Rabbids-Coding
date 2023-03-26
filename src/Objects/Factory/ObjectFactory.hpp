@@ -1,6 +1,5 @@
 #pragma once
-#include ".../Interactable/InteractableObject.hpp"
-
+#include "../Interactable/InteractableObject.hpp"
 using namespace std;
 
 class ObjectFactory

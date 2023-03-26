@@ -1,26 +1,24 @@
-#include "ObjectFactory.h"
-#include ".../Interactable/Button/Button.hpp"
-#include ".../Interactable/Button/Button.cpp"
-#include ".../Interactable/IdleRabbids/IdleRabbids.hpp"
-#include ".../Interactable/IdleRabbids/IdleRabbids.cpp"
+#include "ObjectFactory.hpp"
+#include "../Interactable/Button/Button.hpp"
+#include "../Interactable/Button/Button.cpp"
+#include "../Interactable/IdleRabbids/IdleRabbids.hpp"
+#include "../Interactable/IdleRabbids/IdleRabbids.cpp"
 
 InteractableObject *ObjectFactory::CreateObject(string nama)
 {
-    cout << nama << endl;
-    switch (nama)
+    cout << nama << " Created" << endl;
+    if (nama == "Button")
     {
-    case "Button":
         InteractableObject *button = new Button();
         return button;
-        break;
-
-    case "IdleRabbids":
+    }
+    else if (nama == "IdleRabbids")
+    {
         InteractableObject *idleRabbids = new IdleRabbids();
         return idleRabbids;
-        break;
-
-    default:
-        break;
     }
-    return null;
+    else
+    {
+        return NULL;
+    }
 }

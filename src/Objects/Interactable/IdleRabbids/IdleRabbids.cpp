@@ -1,4 +1,4 @@
-#include "IdleRabbids.h"
+#include "IdleRabbids.hpp"
 
 using namespace std;
 
