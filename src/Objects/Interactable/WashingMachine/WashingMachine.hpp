@@ -1,4 +1,4 @@
-#include "InteractableObject.h"
+#include "InteractableObject.hpp"
 
 class WashingMachine: public InteractableObject{
 public:
