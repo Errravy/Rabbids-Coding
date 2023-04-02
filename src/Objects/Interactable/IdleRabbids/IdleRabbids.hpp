@@ -1,4 +1,5 @@
-#include "InteractableObject.h"
+#pragma once
+#include "../InteractableObject.hpp"
 
 class IdleRabbids : public InteractableObject
 {
