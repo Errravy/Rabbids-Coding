@@ -3,7 +3,8 @@
 
 class Vacuum : public ControllableObject
 {
+private: int direction;
 public:
-    void getDirection() override;
-    void setDirection() override;
+    int getDirection() override;
+    void setDirection(int newDirection) override;
 };

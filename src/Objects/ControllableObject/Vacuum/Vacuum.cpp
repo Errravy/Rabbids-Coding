@@ -1,13 +1,13 @@
 #include "Vacuum.hpp"
-#include <iostream>
-using namespace std;
-private int Direction;
 
-void Vacuum ::getDirection()
+using namespace std;
+
+int Vacuum::getDirection()
 {
-    cout<<"Direction"<<endl;
+     return int;
 }
-void Vacuum ::setDirection()
+
+void Vacuum::setDirection(int newDirection)
 {
-    Direction=Direction;
+    direction = newDirection;
 }
