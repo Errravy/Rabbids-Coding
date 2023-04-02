@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void WashingMachine :: interact()
+void WashingMachine :: Interact()
     {
         cout << "Rabbids Sucked!" << endl;
     }
