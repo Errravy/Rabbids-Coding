@@ -5,4 +5,5 @@ class SedotWC : public InteractableObject
 {
 public:
     void Interact() override;
+    // anjay mabar
 };
