@@ -1,9 +1,12 @@
 #pragma once
 #include "../ControllableObject.hpp"
 
+private int Direction;
 class Rabbids : public ControllableObject
 {
+    private: 
+    int Direction;
 public:
-    void getDirection() override;
-    void setDirection() override;
+    int getDirection() override;
+    void setDirection(int newDirection) override;
 };
