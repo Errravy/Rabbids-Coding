@@ -4,5 +4,5 @@
 class WashingMachine : public InteractableObject
 {
 public:
-    virtual void Interact() override;
+    virtual void React() override;
 };
