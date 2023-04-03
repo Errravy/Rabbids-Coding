@@ -1,13 +1,13 @@
 #include <iostream>
-#include "SedotWC.h"
 #include "InteractableObject.h"
+#include "Tissue.h"
 
 using namespace std;
 
 namespace RabbidsCoding
 {
-    void IdleRabbids ::interact()
+    void Tissue::sucked()
     {
-        cout << "Idle Rabbids Interacted!" << endl;
+        cout << "TissueSucked" << endl;
     }
 }
