@@ -2,8 +2,9 @@
 #define CONTROLLABLEOBJECT_H
 
 #pragma once
+#include "../Objects.hpp"
 
-class ControllableObject
+class ControllableObject : public Objects
 {
 public:
     ControllableObject();

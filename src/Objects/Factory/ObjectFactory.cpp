@@ -6,7 +6,7 @@
 #include "../ControllableObject/Rabbids/Rabbids.hpp"
 #include "../ControllableObject/Rabbids/Rabbids.cpp"
 
-InteractableObject *ObjectFactory::CreateInteractableObject(string nama)
+Objects *ObjectFactory::CreateObject(string nama)
 {
     cout << nama << " Created" << endl;
     if (nama == "Button")
@@ -25,16 +25,16 @@ InteractableObject *ObjectFactory::CreateInteractableObject(string nama)
     }
 }
 
-ControllableObject *ObjectFactory::CreateControllableObject(string nama)
-{
-    cout << nama << " Created" << endl;
-    if (nama == "Rabbids")
-    {
-        ControllableObject *rabbids = new Rabbids();
-        return rabbids;
-    }
-    else
-    {
-        return NULL;
-    }
-}
+// ControllableObject *ObjectFactory::CreateControllableObject(string nama)
+// {
+//     cout << nama << " Created" << endl;
+//     if (nama == "Rabbids")
+//     {
+//         ControllableObject *rabbids = new Rabbids();
+//         return rabbids;
+//     }
+//     else
+//     {
+//         return NULL;
+//     }
+// }
