@@ -1,9 +1,9 @@
 #include <iostream>
-#include <WashingMachine.hpp>
+#include <CardBox.hpp>
 
 using namespace std;
 
-void WashingMachine :: React()
+void CardBox :: Interact()
     {
         cout << "CardBox interacted!" << endl;
     }

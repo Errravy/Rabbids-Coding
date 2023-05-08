@@ -8,5 +8,5 @@ public:
     int getDirection() override;
     void setDirection(int newDirection) override;
 
-    void Interact() override;
+    void Interact() ;
 };

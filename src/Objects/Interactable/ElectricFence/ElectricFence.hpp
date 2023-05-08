@@ -4,5 +4,5 @@
 class ElectricFence : public InteractableObject
 {
 public:
-    void React() override;
+    void Interact() override;
 };

@@ -1,8 +1,8 @@
 #pragma once
-#include "InteractableObject.hpp"
+#include "../InteractableObject.hpp"
 
-class WashingMachine : public InteractableObject
+class CardBox : public InteractableObject
 {
 public:
-    virtual void React() override;
+    void Interact() override;
 };
