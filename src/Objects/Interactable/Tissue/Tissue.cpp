@@ -1,13 +1,8 @@
-#include <iostream>
-#include "InteractableObject.h"
-#include "Tissue.h"
+#include "Tissue.hpp"
 
 using namespace std;
 
-namespace RabbidsCoding
+void Tissue ::Interact()
 {
-    void Tissue::sucked()
-    {
-        cout << "TissueSucked" << endl;
-    }
+    cout << "Tissue Interacted" << endl;
 }

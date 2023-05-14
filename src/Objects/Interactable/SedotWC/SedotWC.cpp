@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void SedotWC ::React()
+void SedotWC ::Interact()
 {
     cout << "Sedot WC Reacted" << endl;
 }

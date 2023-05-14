@@ -4,10 +4,7 @@
 
 using namespace std;
 
-namespace RabbidsCoding
-{
-    void Saw ::interact()
+    void Saw ::Interact()
     {
         cout << "Saw Interact" << endl;
     }
-}
