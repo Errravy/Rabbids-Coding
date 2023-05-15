@@ -2,9 +2,9 @@
 
 using namespace std;
 
-void Rabbids::getDirrection()
+int Rabbids::getDirection()
 {
-    cout << "Direction" << endl;
+    return direction;
 }
 
 void Rabbids::setDirection(int newDirection)
