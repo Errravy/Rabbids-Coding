@@ -1,10 +1,12 @@
 #pragma once
 #include "../ControllableObject.hpp"
 
-class Rabbids : public ControllableObject
+class Claw_Robot : public ControllableObject
 {
 private: int direction;
 public:
     int getDirection() override;
     void setDirection(int newDirection) override;
+
+    void Interact() ;
 };

@@ -4,5 +4,5 @@ using namespace std;
 
 void ElectricFence::Interact()
 {
-    cout << "Electric Fence Interacted !" << endl;
+    cout << "Electric Fence Reacted !" << endl;
 }

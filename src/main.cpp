@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-  InteractableObject *button = ObjectFactory::CreateObject("Button");
-  InteractableObject *idleRabbids = ObjectFactory::CreateObject("IdleRabbids");
+  InteractableObject *button = ObjectFactory::Create_IO("Button");
+  InteractableObject *idleRabbids = ObjectFactory::Create_IO("IdleRabbids");
   button->Interact();
   idleRabbids->Interact();
   delete button;
