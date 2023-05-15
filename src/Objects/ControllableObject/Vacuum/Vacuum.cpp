@@ -4,7 +4,7 @@ using namespace std;
 
 int Vacuum::getDirection()
 {
-     return int;
+     return direction;
 }
 
 void Vacuum::setDirection(int newDirection)
