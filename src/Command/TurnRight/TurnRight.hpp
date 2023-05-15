@@ -12,7 +12,6 @@ public:
     TurnRight(IControlable* cObj);
 
     void Execute() override;
-
     Commands GetEnum() override;
 
 private:
