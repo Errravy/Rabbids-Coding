@@ -4,7 +4,7 @@ using namespace std;
 
 int Claw_Robot::getDirection()
 {
-     return int;
+     return direction;
 }
 
 void Claw_Robot::setDirection(int newDirection)
