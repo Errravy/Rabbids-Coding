@@ -12,8 +12,8 @@ void DisplayManager::SetConsoleColor(int color)
 
 void DisplayManager::RenderLevel(Level& level)
 {
-    Grid& grid = level.GetGrid();
-    grid.CheckCell(level.GetControlable());
+    Grid& grid = level.getGrid();
+    grid.checkCell(level.GetControlable());
 
     int width = grid.GetWidth();
     int height = grid.GetHeight();
