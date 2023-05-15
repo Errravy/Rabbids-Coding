@@ -4,5 +4,5 @@ using namespace std;
 
 void SedotWC ::Interact()
 {
-    cout << "Sedot WC Interacted" << endl;
+    cout << "Sedot WC Reacted" << endl;
 }

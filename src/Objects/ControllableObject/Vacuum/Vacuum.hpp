@@ -1,7 +1,7 @@
 #pragma once
 #include "../ControllableObject.hpp"
 
-class Rabbids : public ControllableObject
+class Vacuum : public ControllableObject
 {
 private: int direction;
 public:

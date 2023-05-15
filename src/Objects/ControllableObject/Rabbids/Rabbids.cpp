@@ -1,14 +1,13 @@
 #include "Rabbids.hpp"
 
 using namespace std;
-private int Direction;
 
-void Rabbids::getDirrection()
+int Rabbids::getDirection()
 {
-    cout << "Direction" << endl;
+    return direction;
 }
 
-void Rabbids::setDirection()
+void Rabbids::setDirection(int newDirection)
 {
-    Direction = Direction;
+    direction = newDirection;
 }

@@ -1,12 +1,9 @@
 #include <iostream>
-#include <WashingMachine.hpp>
+#include "WashingMachine.hpp"
 
 using namespace std;
 
-namespace Rabbidscoding
-{
-    void WashingMachine :: interact()
+void WashingMachine :: Interact()
     {
         cout << "Rabbids Sucked!" << endl;
     }
-}
