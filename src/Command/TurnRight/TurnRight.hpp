@@ -6,17 +6,15 @@
 
 class TurnRight : public ICommand {
 private:
+    void rotate();
     IControlable* _cObj;
 
 public:
     TurnRight(IControlable* cObj);
 
     void Execute() override;
-
     Commands GetEnum() override;
 
-private:
-    void Rotate();
 };
 
 #endif /* TURNRIGHT_HPP */
