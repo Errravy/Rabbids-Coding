@@ -2,49 +2,49 @@
 
 GameManager* GameManager::Instance = nullptr;
 
-GameManager::GameManager() {
+GameManager::gameManager() {
     if (Instance == nullptr) {
         Instance = this;
     }
 
     gameState = GameState::NotStarted;
-    currentLevel = LevelManager::GetLevel();
+    currentLevel = LevelManager::getLevel();
 }
 
-void GameManager::StartGame() {
+void GameManager::startGame() {
     gameState = GameState::Playing;
 
     while (gameState == GameState::Playing) {
-        DisplayManager::RenderLevel(currentLevel);
-        currentLevel->ShowAvailableMoves();
-        int move = InputManager::GetMove();
+        DisplayManager::renderLevel(currentLevel);
+        currentLevel->showAvailableMoves();
+        int move = InputManager::getMove();
 
         if (move == 1) {
-            currentLevel->GetInvoker()->AddCommand(currentLevel->GetControlable()->GetCommand(Commands::Left));
+            currentLevel->getInvoker()->addCommand(currentLevel->getControlable()->getCommand(Commands::Left));
         }
         else if (move == 2) {
-            currentLevel->GetInvoker()->AddCommand(currentLevel->GetControlable()->GetCommand(Commands::Right));
+            currentLevel->getInvoker()->addCommand(currentLevel->getControlable()->getCommand(Commands::Right));
         }
         else if (move == 3) {
-            currentLevel->GetInvoker()->AddCommand(currentLevel->GetControlable()->GetCommand(Commands::Forward));
+            currentLevel->getInvoker()->addCommand(currentLevel->getControlable()->getCommand(Commands::Forward));
         }
         else if (move == 4) {
-            currentLevel->GetInvoker()->AddCommand(currentLevel->GetControlable()->GetCommand(Commands::Backward));
+            currentLevel->getInvoker()->addCommand(currentLevel->getControlable()->getCommand(Commands::Backward));
         }
         else if (move == 5) {
-            currentLevel->GetInvoker()->ExecuteCommands();
+            currentLevel->getInvoker()->executeCommands();
         }
 
-        if (currentLevel->IsCompleted()) {
-            EndGame();
+        if (currentLevel->isCompleted()) {
+            endGame();
         }
     }
 }
 
-void GameManager::EndGame() {
+void GameManager::endGame() {
     gameState = GameState::NotStarted;
 }
 
-void GameManager::LoadLevel(Level* level) {
+void GameManager::loadLevel(Level* level) {
     currentLevel = level;
 }

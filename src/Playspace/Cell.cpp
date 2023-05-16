@@ -11,7 +11,7 @@ Cell::Cell(int x, int y)
     cellObj = walkable;
 }
 
-void Cell::CheckObject(IObjects* obj)
+void Cell::checkObject(IObjects* obj)
 {
     if (obj->GetPosition().x == x && obj->GetPosition().y == y)
     {

@@ -15,11 +15,11 @@ public:
 
     GameManager();
 
-    void StartGame();
+    void startGame();
 
-    void EndGame();
+    void endGame();
 
-    void LoadLevel(Level* level);
+    void loadLevel(Level* level);
 };
 
 #endif // GAME_MANAGER_H
