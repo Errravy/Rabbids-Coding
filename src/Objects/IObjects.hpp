@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include "../Playspace/Cell.hpp"
+// #include "../Playspace/Cell.hpp"
 
 class IObjects
 {
@@ -13,7 +13,7 @@ private:
     std::string _objectSymbol;
     int _x;
     int _y;
-    Cell _cell;
+    // Cell _cell;
     bool _isSucked;
 
 public:

@@ -1,13 +1,15 @@
 #pragma once
-#include "../ControllableObject.hpp"
-#include "../ICommand.hpp"
+#include "../IControlable.hpp"
+#include "../../../Enums/Commands.hpp"
+#include "../../../Enums/Directions.hpp"
+#include "../../../Command/ICommand.hpp"
 #include <iostream>
 #include <unordered_map>
 #include <utility>
-class Vacuum : public ControllableObject
+class Vacuum : public IControlable
 {
 private:
-    std::string objectSymbol = "V";
+    std::string objectSymbol = "A";
     std::unordered_map<Commands, ICommand *> _Command;
     int _x;
     int _y;
@@ -17,9 +19,9 @@ private:
 public:
     Vacuum();
 
-    ICommand *SetCommand(ICommand *command);
+    void setCommand(ICommand *command);
 
-    ICommand *GetCommand(Commands commands);
+    ICommand *getCommand(Commands commands);
 
     void setPosition(int x, int y);
 
@@ -29,9 +31,9 @@ public:
 
     std::pair<int, int> getPosition();
 
-    void SetDirection(int direction);
+    void setDirection(int direction);
 
-    Directions GetDirection();
+    Directions getDirection();
 
     bool isSucked();
 
