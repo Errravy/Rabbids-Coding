@@ -1,6 +1,6 @@
 #pragma once
 #include "../ControllableObject.hpp"
-#include "../ICommand.hpp"
+#include "../../../Command/ICommand.hpp"
 #include <iostream>
 #include <unordered_map>
 #include <utility>

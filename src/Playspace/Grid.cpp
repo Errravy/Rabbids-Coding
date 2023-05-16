@@ -3,12 +3,12 @@
 // Constructor
 Grid::Grid(int width, int height)
 {
-    InitializeGridAndCell(width, height);
-    GenerateGrid();
+    initializeGridAndCell(width, height);
+    generateGrid();
 }
 
 // Private methods
-void Grid::InitializeGridAndCell(int width, int height)
+void Grid::initializeGridAndCell(int width, int height)
 {
     this->width = width;
     this->height = height;
@@ -19,7 +19,7 @@ void Grid::InitializeGridAndCell(int width, int height)
     }
 }
 
-void Grid::GenerateGrid()
+void Grid::generateGrid()
 {
     for (int x = 0; x < width; x++)
     {
@@ -33,24 +33,24 @@ void Grid::GenerateGrid()
 }
 
 // Public methods
-void Grid::CheckCell(IObjects* obj)
+void Grid::checkCell(IObjects* obj)
 {
     if (previousCell == nullptr)
     {
-        previousCell = cells[obj->GetPosition()];
+        previousCell = cells[obj->getPosition()];
         previousObject = obj;
     }
     else
     {
-        previousCell->CheckObject(previousObject);
-        previousCell = cells[obj->GetPosition()];
+        previousCell->checkObject(previousObject);
+        previousCell = cells[obj->getPosition()];
         previousObject = obj;
     }
 
-    std::pair<int, int> position = obj->GetPosition();
+    std::pair<int, int> position = obj->getPosition();
     if (position.first < width && position.second < height)
     {
-        cells[position]->CheckObject(obj);
+        cells[position]->checkObject(obj);
     }
     else
     {
@@ -58,22 +58,22 @@ void Grid::CheckCell(IObjects* obj)
     }
 }
 
-void Grid::CheckGridPos(int x, int y)
+void Grid::checkGridPos(int x, int y)
 {
     std::cout << grid[x][y] << std::endl;
 }
 
-int Grid::GetWidth()
+int Grid::getWidth()
 {
     return width;
 }
 
-int Grid::GetHeight()
+int Grid::getHeight()
 {
     return height;
 }
 
-std::unordered_map<std::pair<int, int>, Cell*, CellHash>& Grid::GetCells()
+std::unordered_map<std::pair<int, int>, Cell*, CellHash>& Grid::getCells()
 {
     return cells;
 }

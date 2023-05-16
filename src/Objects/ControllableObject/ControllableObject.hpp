@@ -1,4 +1,7 @@
-class IControlable : public Objects {
+#pragma once
+#include "../Objects.hpp"
+#include "../../Command/ICommand.hpp"
+class ControllableObject : public Objects {
 public:
     virtual ICommand* setCommand(ICommand* command) = 0;
     virtual ICommand* getCommand(Commands commands) = 0;

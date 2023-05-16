@@ -1,5 +1,5 @@
-#ifndef GRID_H
-#define GRID_H
+#ifndef Grid_h
+#define Grid_h
 
 #include <iostream>
 #include <string>
@@ -7,8 +7,7 @@
 #include "Cell.h"
 #include "IObjects.h" // Assuming the header file for IObjects is included
 
-class Grid
-{
+class Grid {
 private:
     int temp = 0;
     int width;
@@ -19,16 +18,16 @@ private:
     Cell* previousCell;
     IObjects* previousObject;
 
-    void InitializeGridAndCell(int width, int height);
-    void GenerateGrid();
+    void initializeGridAndCell(int width, int height);
+    void generateGrid();
 
 public:
     Grid(int width, int height);
-    void CheckCell(IObjects* obj);
-    void CheckGridPos(int x, int y);
-    int GetWidth();
-    int GetHeight();
-    std::unordered_map<std::pair<int, int>, Cell*, CellHash>& GetCells();
+    void checkCell(IObjects* obj);
+    void checkGridPos(int x, int y);
+    int getWidth();
+    int getHeight();
+    std::unordered_map<std::pair<int, int>, Cell*, CellHash>& getCells();
 };
 
-#endif // GRID_H
+#endif /* Grid_h */
