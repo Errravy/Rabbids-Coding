@@ -1,30 +1,30 @@
-#include"TurnLeft.hpp"
-    TurnLeft::TurnLeft(IControlable* cObj) {
+#include"TurnRight.hpp"
+    TurnRight::TurnRight(IControlable* cObj) {
         _cObj = cObj;
     }
 
-    void TurnLeft::execute() override {
+    void TurnRight::execute() override {
         rotate();
     }
 
-    Commands TurnLeft::getEnum() override {
-        return Commands::Left;
+    Commands TurnRight::getEnum() override {
+        return Commands::Right;
     }
 
 
-    void TurnLeft::rotate() {
+    void TurnRight::rotate() {
         switch (_cObj->GetDirection()) {
             case Directions::Up:
-                _cObj->SetDirection(180);
-                break;
-            case Directions::Down:
                 _cObj->SetDirection(0);
                 break;
+            case Directions::Down:
+                _cObj->SetDirection(180);
+                break;
             case Directions::Left:
-                _cObj->SetDirection(90);
+                _cObj->SetDirection(270);
                 break;
             case Directions::Right:
-                _cObj->SetDirection(270);
+                _cObj->SetDirection(90);
                 break;
             default:
                 break;
