@@ -14,7 +14,7 @@
 #include "../ControllableObject/Rabbids/Rabbids.cpp"
 #include "../ControllableObject/Vacuum/Vacuum.cpp"
 
-Objects *ObjectFactory::CreateObject(string ObjectName)
+Objects *ObjectFactory::createObject(string ObjectName)
 {
     Objects *object = nullptr;
     cout << ObjectName << " Created" << endl;

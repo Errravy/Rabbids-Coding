@@ -14,8 +14,8 @@ public:
     void setPositionX(int x);
     void setPositionY(int y);
     void setPosition(int x, int y);
-    std::pair<int, int> GetPosition();
+    std::pair<int, int> getPosition();
     void react();
     bool isSucked();
-    std::string GetObjectSymbol();
+    std::string getObjectSymbol();
 };
