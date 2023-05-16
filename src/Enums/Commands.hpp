@@ -1,4 +1,4 @@
-enum commands{
+enum Commands{
     Forward,
     Backward,
     Left,

@@ -21,7 +21,7 @@ public:
         _isSucked = false;
     }
 
-    ICommand Vacuum:: SetCommand(ICommand* command)
+    ICommand Vacuum:: setCommand(ICommand* command)
     {
         if (_command.find(command->GetEnum()) == _command.end())
         {
@@ -31,33 +31,33 @@ public:
         return nullptr;
     }
 
-    ICommand Vacuum::GetCommand (Commands commands)
+    ICommand Vacuum::getCommand (Commands commands)
     {
         return _command[commands];
     }
 
-    void Vacuum::SetPosition(int x, int y)
+    void Vacuum::setPosition(int x, int y)
     {
         _x = x;
         _y = y;
     }
 
-    void Vacuum::SetPositionX(int x)
+    void Vacuum::setPositionX(int x)
     {
         _x = x;
     }
 
-    void Vacuum::SetPositionY(int y)
+    void Vacuum::setPositionY(int y)
     {
         _y = y;
     }
 
-    std::pair<int, int> GetPosition()
+    std::pair<int, int> getPosition()
     {
         return std::make_pair(_x, _y);
     }
 
-    void Vacuum::SetDirection(int direction)
+    void Vacuum::setDirection(int direction)
     {
         switch (direction)
         {
@@ -79,17 +79,17 @@ public:
         }
     }
 
-    Directions Vacuum ::GetDirection()
+    Directions Vacuum ::getDirection()
     {
         return _z;
     }
 
-    bool Vacuum::IsSucked()
+    bool Vacuum::isSucked()
     {
         return _isSucked;
     }
 
-    std::string GetObjectSymbol()
+    std::string getObjectSymbol()
     {
         return objectSymbol;
     }

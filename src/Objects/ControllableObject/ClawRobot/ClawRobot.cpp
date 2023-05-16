@@ -1,8 +1,8 @@
-#include "ArmedRabbids.hpp"
+#include "ClawRobot.hpp"
 
 using namespace std;
 
-class ArmedRabbids : public ControllableObject
+class ClawRobot : public ControllableObject
 {
 private:
     std::string objectSymbol = "V";
@@ -13,7 +13,7 @@ private:
     bool _isSucked;
 
 public:
-    ArmedRabbids()
+    ClawRobot()
     {
         _x = 0;
         _y = 0;
@@ -21,7 +21,7 @@ public:
         _isSucked = false;
     }
 
-    ICommand ArmedRabbids:: setCommand(ICommand* command)
+    ICommand ClawRobot:: SetCommand(ICommand* command)
     {
         if (_command.find(command->GetEnum()) == _command.end())
         {
@@ -31,33 +31,33 @@ public:
         return nullptr;
     }
 
-    ICommand ArmedRabbids::getCommand (Commands commands)
+    ICommand ClawRobot::GetCommand (Commands commands)
     {
         return _command[commands];
     }
 
-    void ArmedRabbids::setPosition(int x, int y)
+    void ClawRobot::SetPosition(int x, int y)
     {
         _x = x;
         _y = y;
     }
 
-    void ArmedRabbids::setPositionX(int x)
+    void ClawRobot::SetPositionX(int x)
     {
         _x = x;
     }
 
-    void ArmedRabbids::setPositionY(int y)
+    void ClawRobot::SetPositionY(int y)
     {
         _y = y;
     }
 
-    std::pair<int, int> getPosition()
+    std::pair<int, int> GetPosition()
     {
         return std::make_pair(_x, _y);
     }
 
-    void ArmedRabbids::setDirection(int direction)
+    void ClawRobot::SetDirection(int direction)
     {
         switch (direction)
         {
@@ -79,17 +79,17 @@ public:
         }
     }
 
-    Directions ArmedRabbids ::getDirection()
+    Directions ClawRobot ::GetDirection()
     {
         return _z;
     }
 
-    bool ArmedRabbids::IsSucked()
+    bool ClawRobot::IsSucked()
     {
         return _isSucked;
     }
 
-    std::string getObjectSymbol()
+    std::string GetObjectSymbol()
     {
         return objectSymbol;
     }
