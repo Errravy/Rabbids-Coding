@@ -1,22 +1,18 @@
-class TurnLeft : public ICommand {
-private:
-    IControlable* _cObj;
-
-public:
-    TurnLeft(IControlable* cObj) {
+#include"TurnLeft.hpp"
+    TurnLeft::TurnLeft(IControlable* cObj) {
         _cObj = cObj;
     }
 
-    void Execute() override {
-        Rotate();
+    void TurnLeft::execute() override {
+        rotate();
     }
 
-    Commands GetEnum() override {
+    Commands TurnLeft::getEnum() override {
         return Commands::Left;
     }
 
-private:
-    void Rotate() {
+
+    void TurnLeft::rotate() {
         switch (_cObj->GetDirection()) {
             case Directions::Up:
                 _cObj->SetDirection(180);
@@ -33,5 +29,4 @@ private:
             default:
                 break;
         }
-    }
-};
+    };
