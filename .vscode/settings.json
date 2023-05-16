@@ -53,5 +53,6 @@
         "iomanip": "cpp",
         "sstream": "cpp"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "editor.codeLens": true
 }

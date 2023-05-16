@@ -1,7 +1,5 @@
 #pragma once
 #include <iostream>
-#pragma once
-#include <iostream>
 #include "../IInteractable.hpp"
 
 class Button : public IInteractable

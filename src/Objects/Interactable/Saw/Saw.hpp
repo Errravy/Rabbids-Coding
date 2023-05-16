@@ -1,9 +1,10 @@
 #pragma once
-#include "../InteractableObject.hpp"
+#include "../IInteractable.hpp"
 
-class Saw: public InteractableObject
+class Saw: public IInteractable
 {
     public :
-        void Interact() override;
+        Saw();
+        void react() override;
         
 };

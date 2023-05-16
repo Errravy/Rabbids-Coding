@@ -8,6 +8,7 @@
 class IInteractable : public IObjects
 {
 public:
+    IInteractable() = default;
     virtual void react() = 0;
 };
 

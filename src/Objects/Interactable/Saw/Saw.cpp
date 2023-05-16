@@ -4,7 +4,7 @@
 
 using namespace std;
 
-    void Saw ::Interact()
+    void Saw ::react()
     {
         cout << "Saw Interact" << endl;
     }

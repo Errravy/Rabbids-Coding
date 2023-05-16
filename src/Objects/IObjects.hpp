@@ -17,6 +17,7 @@ private:
     bool _isSucked;
 
 public:
+    IObjects() = default;
     virtual bool isSucked() = 0;
     virtual void setPositionX(int x) = 0;
     virtual void setPositionY(int y) = 0;
