@@ -21,17 +21,17 @@ public:
         _isSucked = false;
     }
 
-    ICommand ClawRobot:: SetCommand(ICommand* command)
+    ICommand* ClawRobot:: setCommand(ICommand* command)
     {
-        if (_command.find(command->GetEnum()) == _command.end())
+        if (_command.find(command->getEnum()) == _command.end())
         {
-            _command[command->GetEnum()] = command;
+            _command[command->getEnum()] = command;
             return command;
         }
         return nullptr;
     }
 
-    ICommand ClawRobot::GetCommand (Commands commands)
+    ICommand* ClawRobot::getCommand (Commands commands)
     {
         return _command[commands];
     }

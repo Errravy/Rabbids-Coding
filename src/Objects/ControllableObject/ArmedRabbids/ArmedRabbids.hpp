@@ -21,7 +21,7 @@ public:
 
     ICommand* setCommand(ICommand* command);
 
-    ICommand* getCommand(Commands commands);
+    ICommand* getCommand(Commands commands) ;
 
     void setPosition(int x, int y);
 

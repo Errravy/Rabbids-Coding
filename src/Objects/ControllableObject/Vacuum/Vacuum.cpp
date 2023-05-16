@@ -21,11 +21,11 @@ public:
         _isSucked = false;
     }
 
-    ICommand Vacuum:: setCommand(ICommand* command)
+    ICommand* Vacuum:: setCommand(ICommand* command)
     {
-        if (_command.find(command->GetEnum()) == _command.end())
+        if (_command.find(command->getEnum()) == _command.end())
         {
-            _command[command->GetEnum()] = command;
+            _command[command->getEnum()] = command;
             return command;
         }
         return nullptr;
