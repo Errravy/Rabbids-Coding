@@ -1,5 +1,5 @@
 #pragma once
-#include "../InteractableObject.hpp"
+#include "../IInteractable.hpp"
 
 class CardBox : public InteractableObject
 {

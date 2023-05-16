@@ -38,7 +38,7 @@ bool IdleRabbids::isSucked()
     return _isSucked;
 }
 
-void IdleRabbids::getObjectSymbol()
+std::string IdleRabbids::getObjectSymbol()
 {
     return objectSymbol;
 }

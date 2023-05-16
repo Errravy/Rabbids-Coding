@@ -5,7 +5,7 @@
 class IdleRabbids : public IInteractable
 {
 private:
-    string objectSymbol = "I";
+    std::string objectSymbol = "I";
     int _x;
     int _y;
     bool _isSucked;
