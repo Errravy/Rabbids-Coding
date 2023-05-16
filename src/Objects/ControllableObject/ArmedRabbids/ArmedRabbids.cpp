@@ -4,7 +4,7 @@ using namespace std;
 
 int ArmedRabbids::getDirection()
 {
-     return int;
+     return direction;
 }
 
 void ArmedRabbids::setDirection(int newDirection)
