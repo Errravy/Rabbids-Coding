@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include "../Playspace/Cell.hpp"
+#include "../Playspace/Cell/Cell.hpp"
 
 class IObjects
 {

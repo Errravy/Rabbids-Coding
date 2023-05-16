@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <string>
-#include "../Objects/IObjects.hpp"
+#include "../../Objects/IObjects.hpp"
 
 class Cell
 {
