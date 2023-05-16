@@ -1,4 +1,4 @@
-class IControlable : public IObjects {
+class IControlable : public Objects {
 public:
     virtual ICommand* setCommand(ICommand* command) = 0;
     virtual ICommand* getCommand(Commands commands) = 0;
