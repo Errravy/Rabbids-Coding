@@ -6,10 +6,10 @@
 #include <iostream>
 #include <unordered_map>
 #include <utility>
-class ArmedRabbids : public ControllableObject
+class ClawRobot : public ControllableObject
 {
 private:
-    std::string objectSymbol = "A";
+    std::string objectSymbol = "V";
     std::unordered_map<Commands, ICommand*> _Command;
     int _x;
     int _y;
@@ -17,7 +17,7 @@ private:
     bool _isSucked;
 
 public:
-    ArmedRabbids();
+    ClawRobot();
 
     ICommand* setCommand(ICommand* command);
 
