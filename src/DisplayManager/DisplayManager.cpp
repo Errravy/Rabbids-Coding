@@ -1,6 +1,6 @@
 #include "DisplayManager.h"
 
-void DisplayManager::SetConsoleColor(int color)
+void DisplayManager::setConsoleColor(int color)
 {
 #ifdef _WIN32
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
@@ -10,46 +10,46 @@ void DisplayManager::SetConsoleColor(int color)
 #endif
 }
 
-void DisplayManager::RenderLevel(Level& level)
+void DisplayManager::renderLevel(Level& level)
 {
     Grid& grid = level.getGrid();
-    grid.checkCell(level.GetControlable());
+    grid.checkCell(level.getControlable());
 
-    int width = grid.GetWidth();
-    int height = grid.GetHeight();
+    int width = grid.getWidth();
+    int height = grid.getHeight();
 
-    for (int i = 0; i < height * RENDER_HEIGHT_MULTIPLIER; i++)
+    for (int i = 0; i < height * renderHeightMultiplier; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            Cell* currentCell = grid.GetCells()[std::make_pair(j, i / RENDER_HEIGHT_MULTIPLIER)];
+            Cell* currentCell = grid.getCells()[std::make_pair(j, i / renderHeightMultiplier)];
 
-            if (i % RENDER_HEIGHT_MULTIPLIER == 0)
+            if (i % renderHeightMultiplier == 0)
             {
                 std::cout << "|=======";
             }
-            else if (i % RENDER_HEIGHT_MULTIPLIER == 1)
+            else if (i % renderHeightMultiplier == 1)
             {
                 std::cout << "|";
 
-                if (currentCell->IsWalkable())
+                if (currentCell->isWalkable())
                 {
-                    SetConsoleColor(GREEN_COLOR);
+                    setConsoleColor(greenColor);
                     std::cout << "       ";
                 }
                 else
                 {
-                    if (currentCell->IsBlocked())
+                    if (currentCell->isBlocked())
                     {
-                        SetConsoleColor(DEFAULT_COLOR);
+                        setConsoleColor(defaultColor);
                         std::cout << "       ";
                     }
                     else
                     {
-                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->GetObject()))
+                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
                         {
-                            SetConsoleColor(BLUE_COLOR);
-                            if (controlable->GetDirection() == Directions::Up)
+                            setConsoleColor(blueColor);
+                            if (controlable->getDirection() == Directions::Up)
                             {
                                 std::cout << "   ^   ";
                             }
@@ -60,109 +60,109 @@ void DisplayManager::RenderLevel(Level& level)
                         }
                         else
                         {
-                            SetConsoleColor(RED_COLOR);
+                            setConsoleColor(redColor);
                             std::cout << "       ";
                         }
                     }
                 }
 
-                SetConsoleColor(DEFAULT_COLOR);
+                setConsoleColor(defaultColor);
             }
-            else if (i % RENDER_HEIGHT_MULTIPLIER == 2)
+            else if (i % renderHeightMultiplier == 2)
             {
                 std::cout << "|";
 
-                if (currentCell->IsWalkable())
+                if (currentCell->isWalkable())
                 {
-                    SetConsoleColor(GREEN_COLOR);
-                    std::cout << "   " << currentCell->GetCellObj() << "   ";
+                    setConsoleColor(greenColor);
+                    std::cout << "   " << currentCell->getCellObj() << "   ";
                 }
                 else
                 {
-                    if (currentCell->IsBlocked())
+                    if (currentCell->isBlocked())
                     {
-                        SetConsoleColor(DEFAULT_COLOR);
-                        std::cout << "   " << currentCell->GetCellObj() << "   ";
+                        setConsoleColor(defaultColor);
+                        std::cout << "   " << currentCell->getCellObj() << "   ";
                     }
                     else
                     {
-                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->GetObject()))
+                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
                         {
-                            SetConsoleColor(BLUE_COLOR);
-                            if (controlable->GetDirection() == Directions::Right)
+                            setConsoleColor(blueColor);
+                            if (controlable->getDirection() == Directions::Right)
                             {
-                                std::cout << "   " << currentCell->GetCellObj() << "   ";
-                                std::cout << "   " << currentCell->GetCellObj() << " > ";
+                                std::cout << "   " << currentCell->getCellObj() << "   ";
+                                std::cout << "   " << currentCell->getCellObj() << " > ";
                             }
-                            else if (controlable->GetDirection() == Directions::Left)
+                            else if (controlable->getDirection() == Directions::Left)
                             {
-                                std::cout << " < " << currentCell->GetCellObj() << "   ";
+                                std::cout << " < " << currentCell->getCellObj() << "   ";
                             }
                         }
                         else
                         {
-                            SetConsoleColor(RED_COLOR);
-                            std::cout << "   " << currentCell->GetCellObj() << "   ";
+                            setConsoleColor(redColor);
+                            std::cout << "   " << currentCell->getCellObj() << "   ";
                         }
                     }
                 }
 
-                SetConsoleColor(DEFAULT_COLOR);
+                setConsoleColor(defaultColor);
             }
-            
-            else if (i % RENDER_HEIGHT_MULTIPLIER == 3)
+            else if (i % renderHeightMultiplier == 3)
             {
                 std::cout << "|";
-                            if (currentCell->IsWalkable())
+
+                if (currentCell->isWalkable())
                 {
-                    SetConsoleColor(GREEN_COLOR);
+                    setConsoleColor(greenColor);
                     std::cout << "       ";
-                    SetConsoleColor(DEFAULT_COLOR);
+                    setConsoleColor(defaultColor);
                 }
                 else
                 {
-                    if (currentCell->IsBlocked())
+                    if (currentCell->isBlocked())
+                                {
+                    setConsoleColor(defaultColor);
+                    std::cout << "       ";
+                    setConsoleColor(defaultColor);
+                }
+                else
+                {
+                    if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
                     {
-                        SetConsoleColor(DEFAULT_COLOR);
-                        std::cout << "       ";
-                        SetConsoleColor(DEFAULT_COLOR);
-                    }
-                    else
-                    {
-                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->GetObject()))
+                        setConsoleColor(blueColor);
+                        if (controlable->getDirection() == Directions::Down)
                         {
-                            SetConsoleColor(BLUE_COLOR);
-                            if (controlable->GetDirection() == Directions::Down)
-                            {
-                                std::cout << "   v   ";
-                            }
-                            else
-                            {
-                                std::cout << "       ";
-                            }
-                            SetConsoleColor(DEFAULT_COLOR);
+                            std::cout << "   v   ";
                         }
                         else
                         {
-                            SetConsoleColor(RED_COLOR);
                             std::cout << "       ";
-                            SetConsoleColor(DEFAULT_COLOR);
                         }
+                        setConsoleColor(defaultColor);
+                    }
+                    else
+                    {
+                        setConsoleColor(redColor);
+                        std::cout << "       ";
+                        setConsoleColor(defaultColor);
                     }
                 }
             }
-
-            std::cout << "|";
-            std::cout << std::endl;
         }
 
-        for (int j = 0; j < width; j++)
-        {
-            std::cout << "|=======";
-        }
-
-        std::cout << "|" << std::endl;
-
-        grid.CheckCell(level.GetControlable());
+        std::cout << "|";
+        std::cout << std::endl;
     }
+
+    for (int j = 0; j < width; j++)
+    {
+        std::cout << "|=======";
+    }
+
+    std::cout << "|" << std::endl;
+
+    grid.checkCell(level.getControlable());
 }
+

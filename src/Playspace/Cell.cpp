@@ -11,14 +11,14 @@ Cell::Cell(int x, int y)
     cellObj = walkable;
 }
 
-void Cell::CheckObject(IObjects* obj)
+void Cell::checkObject(IObjects* obj)
 {
-    if (obj->GetPosition().x == x && obj->GetPosition().y == y)
+    if (obj->getPosition().x == x && obj->getPosition().y == y)
     {
         isWalkable = false;
         std::cout << "Cell " << x << " " << y << " is not walkable because " << obj << " inside it!" << std::endl;
         this->obj = obj;
-        cellObj = obj->GetObjectSymbol();
+        cellObj = obj->getObjectSymbol();
     }
     else
     {
@@ -28,28 +28,28 @@ void Cell::CheckObject(IObjects* obj)
     }
 }
 
-void Cell::SetToBlankCell()
+void Cell::setToBlankCell()
 {
     isWalkable = false;
     cellObj = blank;
 }
 
-std::string Cell::GetCellObj()
+std::string Cell::getCellObj()
 {
     return cellObj;
 }
 
-IObjects* Cell::GetObject()
+IObjects* Cell::getObject()
 {
     return obj;
 }
 
-bool Cell::IsWalkable()
+bool Cell::isWalkable()
 {
     return isWalkable;
 }
 
-bool Cell::IsBlocked()
+bool Cell::isBlocked()
 {
     return cellObj == blank;
 }

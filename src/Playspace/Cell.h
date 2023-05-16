@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "IObjects.h" // Assuming the header file for IObjects is included
+#include "IObjects.h"
 
 class Cell
 {
@@ -19,12 +19,12 @@ private:
 
 public:
     Cell(int x, int y);
-    void CheckObject(IObjects* obj);
-    void SetToBlankCell();
-    std::string GetCellObj();
-    IObjects* GetObject();
-    bool IsWalkable();
-    bool IsBlocked();
+    void checkObject(IObjects* obj);
+    void setToBlankCell();
+    std::string getCellObj();
+    IObjects* getObject();
+    bool isWalkable();
+    bool isBlocked();
 };
 
 #endif // CELL_H
