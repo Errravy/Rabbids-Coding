@@ -1,7 +1,7 @@
 #pragma once
 #include "../InteractableObject.hpp"
 
-class ElectricFence : public InteractableObject
+class CardBox : public InteractableObject
 {
 public:
     void Interact() override;

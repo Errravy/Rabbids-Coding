@@ -1,8 +1,20 @@
-class IControlable : public IObjects {
+#ifndef CONTROLLABLEOBJECT_H
+#define CONTROLLABLEOBJECT_H
+
+#pragma once
+#include "../Objects.hpp"
+
+class ControllableObject : public Objects
+{
 public:
-    virtual ICommand* setCommand(ICommand* command) = 0;
-    virtual ICommand* getCommand(Commands commands) = 0;
-    virtual void setDirection(int direction) = 0;
-    virtual Directions getDirection() = 0;
-    
+    // ControllableObject();
+    // ~ControllableObject();
+
+    virtual void setDirection(int newDirection) = 0;
+    virtual int getDirection() = 0;
+
+private:
+
 };
+
+#endif

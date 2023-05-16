@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void ElectricFence::React()
+void ElectricFence::Interact()
 {
     cout << "Electric Fence Reacted !" << endl;
 }

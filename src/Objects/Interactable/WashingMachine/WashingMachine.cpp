@@ -1,9 +1,9 @@
 #include <iostream>
-#include <WashingMachine.hpp>
+#include "WashingMachine.hpp"
 
 using namespace std;
 
-void WashingMachine :: React()
+void WashingMachine :: Interact()
     {
         cout << "Rabbids Sucked!" << endl;
     }
