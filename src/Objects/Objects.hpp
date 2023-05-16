@@ -7,11 +7,11 @@ class Objects
         int posY;
         
 
-    bool IsSucked();
-    void SetPositionX(int x);
-    void SetPositionY(int y);
-    void SetPosition(int x, int y);
-    std::pair<int, int> GetPosition();
-    std::string GetObjectSymbol();
+    virtual bool isSucked();
+    virtual void setPositionX(int x);
+    virtual void setPositionY(int y);
+    virtual void setPosition(int x, int y);
+    virtual std::pair<int, int> getPosition();
+    virtual std::string getObjectSymbol();
 
 };

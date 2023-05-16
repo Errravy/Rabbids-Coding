@@ -10,7 +10,7 @@
 #include "../Interactable/WashingMachine/WashingMachine.cpp"
 
 #include "../ControllableObject/ArmedRabbids/ArmedRabbids.cpp"
-#include "../ControllableObject/Claw_Robot/Claw_Robot.cpp"
+#include "../ControllableObject/ClawRobot/ClawRobot.cpp"
 #include "../ControllableObject/Rabbids/Rabbids.cpp"
 #include "../ControllableObject/Vacuum/Vacuum.cpp"
 
@@ -59,8 +59,8 @@ Objects *ObjectFactory::CreateObject(string ObjectName)
         object = new ArmedRabbids();
         return object;
     }
-    else if(ObjectName == "Claw_Robot"){
-        object = new Claw_Robot();
+    else if(ObjectName == "ClawRobot"){
+        object = new ClawRobot();
         return object;
     }
     else if(ObjectName == "Rabbids"){
