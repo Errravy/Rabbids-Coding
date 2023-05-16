@@ -3,10 +3,7 @@
 
 using namespace std;
 
-namespace Rabbidscoding
-{
-    void WashingMachine :: interact()
+void WashingMachine :: React()
     {
         cout << "Rabbids Sucked!" << endl;
     }
-}
