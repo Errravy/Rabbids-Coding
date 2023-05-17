@@ -1,7 +1,5 @@
 #include "SedotWC.hpp"
 
-using namespace std;
-
 SedotWC::SedotWC()
 {
     _x = 0;
@@ -9,12 +7,12 @@ SedotWC::SedotWC()
     _isSucked = false;
 }
 
-void SedotWC::setPosition(int x)
+void SedotWC::setPositionX(int x)
 {
     _x = x;
 }
 
-void SedotWC::setPosition(int y)
+void SedotWC::setPositionY(int y)
 {
     _y = y;
 }
@@ -27,7 +25,7 @@ void SedotWC::setPosition(int x, int y)
 
 void SedotWC::react()
 {
-    cout << "SedotWC activated!" << endl;
+    std::cout << "SedotWC activated!" << std::endl;
 }
 
 std::pair<int, int> SedotWC::getPosition()
@@ -40,7 +38,7 @@ bool SedotWC::isSucked()
     return _isSucked;
 }
 
-void SedotWC::getObjectSymbol()
+std::string SedotWC::getObjectSymbol()
 {
     return objectSymbol;
 }
