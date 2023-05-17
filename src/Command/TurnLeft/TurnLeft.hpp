@@ -1,8 +1,8 @@
 #ifndef TURNLEFT_H
 #define TURNLEFT_H
 
-#include "ICommand.h"
-#include "IControlable.h"
+#include "ICommand.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class TurnLeft : public ICommand {
 private:

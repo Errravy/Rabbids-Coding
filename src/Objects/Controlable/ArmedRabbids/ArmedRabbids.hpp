@@ -1,12 +1,12 @@
 #pragma once
-#include "../ControllableObject.hpp"
+#include "../IControlable.hpp"
 #include "../../../Enums/Commands.hpp"
 #include "../../../Enums/Directions.hpp"
 #include "../../../Command/ICommand.hpp"
 #include <iostream>
 #include <unordered_map>
 #include <utility>
-class ArmedRabbids : public ControllableObject
+class ArmedRabbids : public IControlable
 {
 private:
     std::string objectSymbol = "A";
@@ -19,7 +19,7 @@ private:
 public:
     ArmedRabbids();
 
-    ICommand* setCommand(ICommand* command);
+    void setCommand(ICommand* command);
 
     ICommand* getCommand(Commands commands);
 

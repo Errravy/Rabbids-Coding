@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../Enums/Directions.hpp"
 
 class ICommand
 {

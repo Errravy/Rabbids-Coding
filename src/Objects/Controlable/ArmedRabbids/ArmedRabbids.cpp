@@ -1,8 +1,7 @@
 #include "ArmedRabbids.hpp"
 
-using namespace std;
 
-class ArmedRabbids : public ControllableObject
+class ArmedRabbids : public IControlable
 {
 private:
     std::string objectSymbol = "V";
@@ -21,17 +20,15 @@ public:
         _isSucked = false;
     }
 
-    ICommand ArmedRabbids:: setCommand(ICommand* command)
+    void ArmedRabbids:: setCommand(ICommand* command)
     {
-        if (_command.find(command->GetEnum()) == _command.end())
+        if (_command.find(command->getEnum()) == _command.end())
         {
-            _command[command->GetEnum()] = command;
-            return command;
+            _command[command->getEnum()] = command;
         }
-        return nullptr;
     }
 
-    ICommand ArmedRabbids::getCommand (Commands commands)
+    ICommand* ArmedRabbids::getCommand (Commands commands)
     {
         return _command[commands];
     }

@@ -2,7 +2,7 @@
 #define TURNRIGHT_HPP
 
 #include "ICommand.hpp"
-#include "IControlable.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class TurnRight : public ICommand {
 private:
@@ -12,8 +12,8 @@ private:
 public:
     TurnRight(IControlable* cObj);
 
-    void Execute() override;
-    Commands GetEnum() override;
+    void execute() override;
+    Commands getEnum() override;
 
 };
 
