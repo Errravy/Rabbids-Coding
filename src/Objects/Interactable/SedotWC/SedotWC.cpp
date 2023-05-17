@@ -30,7 +30,7 @@ void SedotWC::react()
     cout << "SedotWC activated!" << endl;
 }
 
-std::pair<int, int> SedotWC::GetPosition()
+std::pair<int, int> SedotWC::getPosition()
 {
     return std::make_pair(_x, _y);
 }
