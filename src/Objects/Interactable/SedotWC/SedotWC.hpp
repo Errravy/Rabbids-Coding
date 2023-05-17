@@ -18,7 +18,7 @@ public:
     void setPosition(int) override;
     void setPosition(int, int) override;
     void react() override;
-    std::pair<int, int> GetPosition() override;
+    std::pair<int, int> getPosition() override;
     bool isSucked() override;
     void string getObjectSymbol() override;
 };

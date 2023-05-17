@@ -30,7 +30,7 @@ void IdleRabbids::react()
     cout << "IdleRabbid activated!" << endl;
 }
 
-std::pair<int, int> IdleRabbids::GetPosition()
+std::pair<int, int> IdleRabbids::getPosition()
 {
     return std::make_pair(_x, _y);
 }

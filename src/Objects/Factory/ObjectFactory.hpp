@@ -8,7 +8,7 @@ using namespace std;
 class ObjectFactory
 {
 public:
-	static Objects *CreateObject(string ObjectName);
+	static Objects *createObject(string ObjectName);
 	static InteractableObject *Create_IO(string ObjectName);
 	static ControllableObject *Create_CO(string ObjectName);
 };

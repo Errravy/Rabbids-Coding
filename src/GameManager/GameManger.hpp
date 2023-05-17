@@ -4,8 +4,8 @@
 #include "../Enums/GameState.hpp"
 #include "Level.h"
 #include "LevelManager.h"
-#include "../DisplayManager/DisplayManager.h"
-#include "InputManager.h"
+#include "../DisplayManager/DisplayManager.hpp"
+#include "../InputManager/InputManager.hpp"
 
 class GameManager {
 public:

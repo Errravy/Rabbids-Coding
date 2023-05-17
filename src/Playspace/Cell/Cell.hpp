@@ -1,21 +1,23 @@
+#pragma once
+
 #ifndef CELL_H
 #define CELL_H
 
 #include <iostream>
 #include <string>
-#include "IObjects.h"
+#include "../../Objects/IObjects.hpp"
 
 class Cell
 {
 private:
-    int x;
-    int y;
-    IObjects *obj;
-    std::string cellObj;
+    int _x;
+    int _y;
+    IObjects *_obj;
+    std::string _cellObj;
 
-    bool isWalkable = true;
-    static const std::string walkable;
-    static const std::string blank;
+    bool _isWalkable = true;
+    const std::string _walkable = "-";
+    const std::string _blank = " ";
 
 public:
     Cell(int x, int y);
@@ -27,4 +29,4 @@ public:
     bool isBlocked();
 };
 
-#endif // CELL_H
+#endif

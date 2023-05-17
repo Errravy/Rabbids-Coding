@@ -84,7 +84,7 @@ public:
         return _z;
     }
 
-    bool ArmedRabbids::IsSucked()
+    bool ArmedRabbids::isSucked()
     {
         return _isSucked;
     }
