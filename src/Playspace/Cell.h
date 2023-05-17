@@ -19,11 +19,17 @@ private:
 
 public:
     Cell(int x, int y);
+    
     void checkObject(IObjects* obj);
+    
     void setToBlankCell();
+    
     std::string getCellObj();
+    
     IObjects* getObject();
+    
     bool isWalkable();
+    
     bool isBlocked();
 };
 
