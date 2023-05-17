@@ -1,8 +1,7 @@
 #include "MoveBackward.hpp"
-#include "ControllableObject.hpp"
 #include <iostream>
 
-MoveBackward::MoveBackward(ControllableObject *cObj)
+MoveBackward::MoveBackward(IControlable *cObj)
 {
     _cObj = cObj;
 }
@@ -19,19 +18,19 @@ Commands MoveBackward::getEnum()
 
 void MoveBackward::moveByDirection()
 {
-    switch (_cObj->GetDirection())
+    switch (_cObj->getDirection())
     {
     case Directions::Up:
-        _cObj->setPositionY(_cObj->GetPosition().y + 1);
+        _cObj->setPositionY(_cObj->getPosition().second + 1);
         break;
     case Directions::Down:
-        _cObj->setPositionY(_cObj->GetPosition().y - 1);
+        _cObj->setPositionY(_cObj->getPosition().second - 1);
         break;
     case Directions::Left:
-        _cObj->setPositionX(_cObj->GetPosition().x + 1);
+        _cObj->setPositionX(_cObj->getPosition().first + 1);
         break;
     case Directions::Right:
-        _cObj->setPositionX(_cObj->GetPosition().x - 1);
+        _cObj->setPositionX(_cObj->getPosition().first - 1);
         break;
     default:
         break;

@@ -24,7 +24,7 @@ void ElectricFence::setPosition(int x, int y)
     _y = y;
 }
 
-std::pair<int, int> ElectricFence::GetPosition()
+std::pair<int, int> ElectricFence::getPosition()
 {
     return std::make_pair(_x, _y);
 }
@@ -39,7 +39,7 @@ bool ElectricFence::isSucked()
     return _isSucked;
 }
 
-std::string ElectricFence::GetObjectSymbol()
+std::string ElectricFence::getObjectSymbol()
 {
     return objectSymbol;
 }
