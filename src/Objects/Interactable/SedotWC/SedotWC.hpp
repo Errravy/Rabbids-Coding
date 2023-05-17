@@ -1,24 +1,22 @@
 #pragma once
 #include <iostream>
-#include "../InteractableObject.hpp"
+#include "../IInteractable.hpp"
 
-using namespace std;
-
-class SedotWC : public InteractableObject
+class SedotWC : public IInteractable
 {
 private:
-    string objectSymbol = "I";
+    std::string objectSymbol = "I";
     int _x;
     int _y;
     bool _isSucked;
 
 public:
-    IdleRabbids();
-    void setPosition(int) override;
-    void setPosition(int) override;
+    SedotWC();
+    void setPositionX(int) override;
+    void setPositionY(int) override;
     void setPosition(int, int) override;
     void react() override;
-    std::pair<int, int> GetPosition() override;
+    std::pair<int, int> getPosition() override;
     bool isSucked() override;
-    void string getObjectSymbol() override;
+    std::string getObjectSymbol() override;
 };

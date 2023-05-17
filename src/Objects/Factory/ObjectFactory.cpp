@@ -9,88 +9,91 @@
 #include "../Interactable/Tissue/Tissue.cpp"
 #include "../Interactable/WashingMachine/WashingMachine.cpp"
 
-#include "../ControllableObject/ArmedRabbids/ArmedRabbids.cpp"
-#include "../ControllableObject/ClawRobot/ClawRobot.cpp"
-#include "../ControllableObject/Rabbids/Rabbids.cpp"
-#include "../ControllableObject/Vacuum/Vacuum.cpp"
+#include "../Controlable/ArmedRabbids/ArmedRabbids.cpp"
+#include "../Controlable/ClawRobot/ClawRobot.cpp"
+#include "../Controlable/Rabbids/Rabbids.cpp"
+#include "../Controlable/Vacuum/Vacuum.cpp"
 
-Objects *ObjectFactory::CreateObject(string ObjectName)
+IObjects *ObjectFactory::createObject(Objects ObjectName)
 {
-    Objects *object = nullptr;
-    cout << ObjectName << " Created" << endl;
-    
-    if(ObjectName == "Button"){
+    IObjects *object = nullptr;
+    std::cout << ObjectName << " Created" << std::endl;
+
+    if (ObjectName == button)
+    {
         object = new Button();
-        return object;
-	}
-    else if(ObjectName == "CardBox"){
+    }
+    else if (ObjectName == cardBox)
+    {
         object = new CardBox();
-        return object;
     }
-    else if(ObjectName == "ElectricFence"){
+    else if (ObjectName == electricFence)
+    {
         object = new ElectricFence();
-        return object;
     }
-    else if(ObjectName == "IdleRabbids"){
+    else if (ObjectName == idleRabbids)
+    {
         object = new IdleRabbids();
-        return object;
     }
-    else if(ObjectName == "Saw"){
+    else if (ObjectName == saw)
+    {
         object = new Saw();
-        return object;
     }
-    else if(ObjectName == "SedotWC"){
+    else if (ObjectName == sedotWC)
+    {
         object = new SedotWC();
-        return object;
     }
-    else if(ObjectName == "Tas"){
+    else if (ObjectName == tas)
+    {
         object = new Tas();
-        return object;
     }
-    else if(ObjectName == "Tissue"){
+    else if (ObjectName == tissue)
+    {
         object = new Tissue();
-        return object;
     }
-    else if(ObjectName == "WashingMachine"){
+    else if (ObjectName == washingMachine)
+    {
         object = new WashingMachine();
-        return object;
     }
-    else if(ObjectName == "ArmedRabbids"){
+    else if (ObjectName == armedRabbids)
+    {
         object = new ArmedRabbids();
-        return object;
     }
-    else if(ObjectName == "ClawRobot"){
+    else if (ObjectName == clawRobot)
+    {
         object = new ClawRobot();
-        return object;
     }
-    else if(ObjectName == "Rabbids"){
+    else if (ObjectName == rabbids)
+    {
         object = new Rabbids();
-        return object;
     }
-    else if(ObjectName == "Vacuum"){
+    else if (ObjectName == vacuumRobot)
+    {
         object = new Vacuum();
-        return object;
     }
-    else{
-        cout << "Object Tidak Ada" << endl;
-        return NULL;
+    else
+    {
+        std::cout << "Object Tidak Ada" << std::endl;
+        return nullptr;
     }
+
+    return object;
 }
 
-    // if (ObjectName == "Button")
-    // {
-    //     Objects *button = new Button();
-    //     return button;
-    // }
-    // else if (ObjectName == "IdleRabbids")
-    // {
-    //     InteractableObject *idleRabbids = new IdleRabbids();
-    //     return idleRabbids;
-    // }
-    // else
-    // {
-    //     return NULL;
-    // }
+// if (ObjectName == "Button")
+// {
+//     Objects *button = new Button();
+//     return button;
+// }
+// else if (ObjectName == "IdleRabbids")
+// {
+//     InteractableObject *idleRabbids = new IdleRabbids();
+//     return idleRabbids;
+// }
+// else
+// {
+//     return NULL;
+// }
 
 // ControllableObject *ObjectFactory::Create_CO(string ObjectName)
 // {
