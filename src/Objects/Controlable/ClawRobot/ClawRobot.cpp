@@ -36,23 +36,23 @@ public:
         return _command[commands];
     }
 
-    void ClawRobot::SetPosition(int x, int y)
+    void ClawRobot::setPosition(int x, int y)
     {
         _x = x;
         _y = y;
     }
 
-    void ClawRobot::SetPositionX(int x)
+    void ClawRobot::setPositionX(int x)
     {
         _x = x;
     }
 
-    void ClawRobot::SetPositionY(int y)
+    void ClawRobot::setPositionY(int y)
     {
         _y = y;
     }
 
-    std::pair<int, int> GetPosition()
+    std::pair<int, int> getPosition()
     {
         return std::make_pair(_x, _y);
     }
@@ -84,12 +84,12 @@ public:
         return _z;
     }
 
-    bool ClawRobot::IsSucked()
+    bool ClawRobot::isSucked()
     {
         return _isSucked;
     }
 
-    std::string GetObjectSymbol()
+    std::string getObjectSymbol()
     {
         return objectSymbol;
     }

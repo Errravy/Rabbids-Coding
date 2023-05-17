@@ -4,4 +4,4 @@ enum Directions
     Left,
     Up,
     Down,
-}
+};

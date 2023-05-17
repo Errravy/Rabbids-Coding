@@ -8,7 +8,7 @@ class Vacuum : public ControllableObject
 {
 private:
     std::string objectSymbol = "V";
-    std::unordered_map<Commands, ICommand*> _Command;
+    std::unordered_map<Commands, ICommand *> _Command;
     int _x;
     int _y;
     Directions _z;
@@ -17,23 +17,23 @@ private:
 public:
     Vacuum();
 
-    ICommand* SetCommand(ICommand* command);
+    ICommand *SetCommand(ICommand *command);
 
-    ICommand* GetCommand(Commands commands);
+    ICommand *GetCommand(Commands commands);
 
-    void SetPosition(int x, int y);
+    void setPosition(int x, int y);
 
-    void SetPositionX(int x);
+    void setPositionX(int x);
 
-    void SetPositionY(int y);
+    void setPositionY(int y);
 
-    std::pair<int, int> GetPosition();
+    std::pair<int, int> getPosition();
 
     void SetDirection(int direction);
 
     Directions GetDirection();
 
-    bool IsSucked();
+    bool isSucked();
 
-    std::string GetObjectSymbol();
+    std::string getObjectSymbol();
 };
