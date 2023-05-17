@@ -10,9 +10,9 @@ void DisplayManager::setConsoleColor(int color)
 #endif
 }
 
-void DisplayManager::renderLevel(Level& level)
+void DisplayManager::renderLevel(Level &level)
 {
-    Grid& grid = level.getGrid();
+    Grid &grid = level.getGrid();
     grid.checkCell(level.getControlable());
 
     int width = grid.getWidth();
@@ -22,7 +22,7 @@ void DisplayManager::renderLevel(Level& level)
     {
         for (int j = 0; j < width; j++)
         {
-            Cell* currentCell = grid.getCells()[std::make_pair(j, i / renderHeightMultiplier)];
+            Cell *currentCell = grid.getCells()[std::make_pair(j, i / renderHeightMultiplier)];
 
             if (i % renderHeightMultiplier == 0)
             {
@@ -46,7 +46,7 @@ void DisplayManager::renderLevel(Level& level)
                     }
                     else
                     {
-                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
                         {
                             setConsoleColor(blueColor);
                             if (controlable->getDirection() == Directions::Up)
@@ -86,7 +86,7 @@ void DisplayManager::renderLevel(Level& level)
                     }
                     else
                     {
-                        if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
                         {
                             setConsoleColor(blueColor);
                             if (controlable->getDirection() == Directions::Right)
@@ -122,47 +122,46 @@ void DisplayManager::renderLevel(Level& level)
                 else
                 {
                     if (currentCell->isBlocked())
-                                {
-                    setConsoleColor(defaultColor);
-                    std::cout << "       ";
-                    setConsoleColor(defaultColor);
-                }
-                else
-                {
-                    if (IControlable* controlable = dynamic_cast<IControlable*>(currentCell->getObject()))
                     {
-                        setConsoleColor(blueColor);
-                        if (controlable->getDirection() == Directions::Down)
-                        {
-                            std::cout << "   v   ";
-                        }
-                        else
-                        {
-                            std::cout << "       ";
-                        }
+                        setConsoleColor(defaultColor);
+                        std::cout << "       ";
                         setConsoleColor(defaultColor);
                     }
                     else
                     {
-                        setConsoleColor(redColor);
-                        std::cout << "       ";
-                        setConsoleColor(defaultColor);
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
+                        {
+                            setConsoleColor(blueColor);
+                            if (controlable->getDirection() == Directions::Down)
+                            {
+                                std::cout << "   v   ";
+                            }
+                            else
+                            {
+                                std::cout << "       ";
+                            }
+                            setConsoleColor(defaultColor);
+                        }
+                        else
+                        {
+                            setConsoleColor(redColor);
+                            std::cout << "       ";
+                            setConsoleColor(defaultColor);
+                        }
                     }
                 }
             }
+
+            std::cout << "|";
+            std::cout << std::endl;
         }
 
-        std::cout << "|";
-        std::cout << std::endl;
+        for (int j = 0; j < width; j++)
+        {
+            std::cout << "|=======";
+        }
+
+        std::cout << "|" << std::endl;
+
+        grid.checkCell(level.getControlable());
     }
-
-    for (int j = 0; j < width; j++)
-    {
-        std::cout << "|=======";
-    }
-
-    std::cout << "|" << std::endl;
-
-    grid.checkCell(level.getControlable());
-}
-

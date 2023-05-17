@@ -1,47 +1,44 @@
-#include "Cell.h"
-
-const std::string Cell::walkable = "-";
-const std::string Cell::blank = " ";
+#include "Cell.hpp"
 
 Cell::Cell(int x, int y)
 {
-    this->x = x;
-    this->y = y;
-    obj = nullptr;
-    cellObj = walkable;
+    _x = x;
+    _y = y;
+    _obj = nullptr;
+    _cellObj = _walkable;
 }
 
-void Cell::checkObject(IObjects* obj)
+void Cell::checkObject(IObjects *obj)
 {
-    if (obj->getPosition().x == x && obj->getPosition().y == y)
+    if (obj->getPosition().first == _x && obj->getPosition().second == _y)
     {
-        isWalkable = false;
-        std::cout << "Cell " << x << " " << y << " is not walkable because " << obj << " inside it!" << std::endl;
-        this->obj = obj;
-        cellObj = obj->getObjectSymbol();
+        _isWalkable = false;
+        std::cout << "Cell " << _x << " " << _y << " is not walkable because " << obj << " inside it!" << std::endl;
+        _obj = obj;
+        _cellObj = obj->getObjectSymbol();
     }
     else
     {
-        isWalkable = true;
-        this->obj = nullptr;
-        cellObj = walkable;
+        _isWalkable = true;
+        _obj = nullptr;
+        _cellObj = _walkable;
     }
 }
 
 void Cell::setToBlankCell()
 {
-    isWalkable = false;
-    cellObj = blank;
+    _isWalkable = false;
+    _cellObj = _blank;
 }
 
 std::string Cell::getCellObj()
 {
-    return cellObj;
+    return _cellObj;
 }
 
-IObjects* Cell::getObject()
+IObjects *Cell::getObject()
 {
-    return obj;
+    return _obj;
 }
 
 bool Cell::isWalkable()
@@ -51,5 +48,5 @@ bool Cell::isWalkable()
 
 bool Cell::isBlocked()
 {
-    return cellObj == blank;
+    return _cellObj == _blank;
 }

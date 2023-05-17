@@ -1,30 +1,35 @@
 #include "MoveForward.hpp"
 
-MoveForward::MoveForward(IControlable* cObj) {
+MoveForward::MoveForward(IControlable *cObj)
+{
     _cObj = cObj;
 }
 
-void MoveForward::execute() override {
+void MoveForward::execute()
+{
     moveByDirection();
 }
 
-Commands MoveForward::getEnum() override {
+Commands MoveForward::getEnum()
+{
     return Commands::Forward;
 }
 
-void MoveForward::moveByDirection() {
-    switch (_cObj->GetDirection()) {
+void MoveForward::moveByDirection()
+{
+    switch (_cObj->getDirection())
+    {
     case Directions::Up:
-         _cObj->setPositionY(_cObj->GetPosition().y - 1);
+        _cObj->setPositionY(_cObj->getPosition().second - 1);
         break;
     case Directions::Down:
-        _cObj->setPositionY(_cObj->GetPosition().y + 1);
+        _cObj->setPositionY(_cObj->getPosition().second + 1);
         break;
     case Directions::Left:
-        _cObj->setPositionX(_cObj->GetPosition().x - 1);
+        _cObj->setPositionX(_cObj->getPosition().first - 1);
         break;
     case Directions::Right:
-        _cObj->setPositionX(_cObj->GetPosition().x + 1);
+        _cObj->setPositionX(_cObj->getPosition().first + 1);
         break;
     default:
         break;

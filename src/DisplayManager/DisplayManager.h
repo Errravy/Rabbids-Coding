@@ -5,7 +5,8 @@
 #include <unordered_map>
 #include "Level.h" // Assuming the header file for Level is included
 
-class DisplayManager {
+class DisplayManager
+{
 private:
     static const int renderHeightMultiplier = 4;
     static const int cellWidth = 7;
@@ -21,7 +22,7 @@ private:
     static void setConsoleColor(int color);
 
 public:
-    static void renderLevel(Level& level);
+    static void renderLevel(Level &level);
 };
 
 #endif /* DisplayManager_h */
