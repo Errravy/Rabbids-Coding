@@ -1,9 +1,9 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include "../Grid/Grid.h"
-#include "../../Command/Invoker/Invoker.h"
-#include "../../Objects/Controlable/IControlable.h"
+#include "../Grid/Grid.hpp"
+#include "../../Command/Invoker/Invoker.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class Level
 {
@@ -15,12 +15,12 @@ private:
 
 public:
     Level(Invoker invoker);
-    Grid& GetGrid();
-    Invoker& GetInvoker();
-    void ShowAvailableMoves();
-    bool IsCompleted();
-    void SetControlable(IControlable* controlable);
-    IControlable* GetControlable();
+    Grid& getGrid();
+    Invoker& getInvoker();
+    void showAvailableMoves();
+    bool isCompleted();
+    void setControlable(IControlable* controlable);
+    IControlable* getControlable();
 };
 
 #endif // LEVEL_H
