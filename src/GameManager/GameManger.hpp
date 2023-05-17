@@ -5,7 +5,7 @@
 #include "Level.h"
 #include "LevelManager.h"
 #include "../DisplayManager/DisplayManager.hpp"
-#include "InputManager.h"
+#include "../InputManager/InputManager.hpp"
 
 class GameManager {
 public:
