@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Objects/Factory/ObjectFactory.hpp"
-#include "Objects/Interactable/InteractableObject.hpp"
+#include "Objects/Interactable/IInteractable.hpp"
 #include <typeinfo>
 // #include "./Objects/Factory/ObjectFactory.hpp"
 
@@ -8,10 +8,10 @@ using namespace std;
 
 int main()
 {
-  Objects *button = ObjectFactory::createObject("Button");
-  if (InteractableObject *interactableButton = static_cast<InteractableObject *>(button))
+  IObjects *button = ObjectFactory::createObject(Objects::button);
+  if (IInteractable *interactableButton = static_cast<IInteractable *>(button))
   {
-    interactableButton->Interact();
+    interactableButton->react();
   }
   else
   {

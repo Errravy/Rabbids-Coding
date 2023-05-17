@@ -1,5 +1,5 @@
 #include "ICommand.hpp"
-
+#include "../../Objects/Controlable/IControlable.hpp"
 class MoveForward : public ICommand {
 private:
     IControlable* _cObj;

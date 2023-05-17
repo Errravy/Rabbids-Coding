@@ -1,16 +1,16 @@
 #pragma once
-#include "../ControllableObject.hpp"
+#include "../IControlable.hpp"
 #include "../../../Enums/Commands.hpp"
 #include "../../../Enums/Directions.hpp"
 #include "../../../Command/ICommand.hpp"
 #include <iostream>
 #include <unordered_map>
 #include <utility>
-class ClawRobot : public ControllableObject
+class ClawRobot : public IControlable
 {
 private:
-    std::string objectSymbol = "V";
-    std::unordered_map<Commands, ICommand*> _Command;
+    std::string objectSymbol = "A";
+    std::unordered_map<Commands, ICommand *> _Command;
     int _x;
     int _y;
     Directions _z;
@@ -19,9 +19,9 @@ private:
 public:
     ClawRobot();
 
-    ICommand* setCommand(ICommand* command);
+    void setCommand(ICommand *command);
 
-    ICommand* getCommand(Commands commands);
+    ICommand *getCommand(Commands commands);
 
     void setPosition(int x, int y);
 

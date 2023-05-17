@@ -1,14 +1,14 @@
 #pragma once
-#include "../Objects.hpp"
-#include "../Interactable/InteractableObject.hpp"
-#include "../ControllableObject/ControllableObject.hpp"
 
-using namespace std;
+#include "../../Enums/Objects.hpp"
+#include "../IObjects.hpp"
+#include "../Interactable/IInteractable.hpp"
+#include "../Controlable/IControlable.hpp"
 
 class ObjectFactory
 {
 public:
-	static Objects *createObject(string ObjectName);
-	static InteractableObject *Create_IO(string ObjectName);
-	static ControllableObject *Create_CO(string ObjectName);
+	static IObjects *createObject(Objects ObjectName);
+	static IInteractable *Create_IO(Objects ObjectName);
+	static IControlable *Create_CO(Objects ObjectName);
 };
