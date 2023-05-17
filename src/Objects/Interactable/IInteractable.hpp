@@ -1,8 +1,9 @@
 #pragma once
+
 #ifndef IINTERACTABLE_HPP
 #define IINTERACTABLE_HPP
 
-#include "Objects.hpp"
+#include "../IObjects.hpp"
 
 class IInteractable : public IObjects
 {
@@ -10,4 +11,4 @@ public:
     virtual void react() = 0;
 };
 
-#endif // IINTERACTABLE_HPP
+#endif
