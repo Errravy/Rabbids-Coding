@@ -1,10 +1,10 @@
 #pragma once
+
 #include <iostream>
-#include "../InteractableObject.hpp"
 
-using namespace std;
+#include "../IInteractable.hpp"
 
-class IdleRabbids : public InteractableObject
+class IdleRabbids : public IInteractable
 {
 private:
     string objectSymbol = "I";
@@ -14,11 +14,11 @@ private:
 
 public:
     IdleRabbids();
-    void setPosition(int) override;
-    void setPosition(int) override;
+    void setPositionX(int) override;
+    void setPositionY(int) override;
     void setPosition(int, int) override;
     void react() override;
     std::pair<int, int> getPosition() override;
     bool isSucked() override;
-    void string getObjectSymbol() override;
+    void std::string getObjectSymbol() override;
 };

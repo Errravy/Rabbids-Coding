@@ -9,12 +9,12 @@ IdleRabbids::IdleRabbids()
     _isSucked = false;
 }
 
-void IdleRabbids::setPosition(int x)
+void IdleRabbids::setPositionX(int x)
 {
     _x = x;
 }
 
-void IdleRabbids::setPosition(int y)
+void IdleRabbids::setPositionY(int y)
 {
     _y = y;
 }
@@ -40,7 +40,7 @@ bool IdleRabbids::isSucked()
     return _isSucked;
 }
 
-void IdleRabbids::getObjectSymbol()
+std::string IdleRabbids::getObjectSymbol()
 {
     return objectSymbol;
 }
