@@ -1,10 +1,10 @@
 #ifndef GAME_MANAGER_H
 #define GAME_MANAGER_H
 
-#include "GameState.h"
+#include "../Enums/GameState.hpp"
 #include "Level.h"
 #include "LevelManager.h"
-#include "DisplayManager.h"
+#include "../DisplayManager/DisplayManager.h"
 #include "InputManager.h"
 
 class GameManager {
