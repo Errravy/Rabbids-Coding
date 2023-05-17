@@ -1,15 +1,15 @@
 #pragma once
 #include "ICommand.hpp"
-#include "ControllableObject.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class MoveBackward : public ICommand
 {
 private:
-    ControllableObject *_cObj;
+    IControlable *_cObj;
     void moveByDirection();
 
 public:
-    MoveBackward(ControllableObject *cObj);
+    MoveBackward(IControlable *cObj);
     void execute();
     Commands getEnum();
 };

@@ -1,7 +1,5 @@
 #include "IdleRabbids.hpp"
 
-using namespace std;
-
 IdleRabbids::IdleRabbids()
 {
     _x = 0;
@@ -27,7 +25,7 @@ void IdleRabbids::setPosition(int x, int y)
 
 void IdleRabbids::react()
 {
-    cout << "IdleRabbid activated!" << endl;
+    std::cout << "IdleRabbid activated!" << std::endl;
 }
 
 std::pair<int, int> IdleRabbids::getPosition()

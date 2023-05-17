@@ -1,12 +1,10 @@
 #include "ClawRobot.hpp"
 
-using namespace std;
-
-class ClawRobot : public ControllableObject
+class ClawRobot : public IControlable
 {
 private:
     std::string objectSymbol = "V";
-    std::unordered_map<Commands, ICommand*> _command;
+    std::unordered_map<Commands, ICommand *> _command;
     int _x;
     int _y;
     Directions _z;
@@ -21,17 +19,15 @@ public:
         _isSucked = false;
     }
 
-    ICommand ClawRobot:: SetCommand(ICommand* command)
+    void ClawRobot::setCommand(ICommand *command)
     {
-        if (_command.find(command->GetEnum()) == _command.end())
+        if (_command.find(command->getEnum()) == _command.end())
         {
-            _command[command->GetEnum()] = command;
-            return command;
+            _command[command->getEnum()] = command;
         }
-        return nullptr;
     }
 
-    ICommand ClawRobot::GetCommand (Commands commands)
+    ICommand *ClawRobot::getCommand(Commands commands)
     {
         return _command[commands];
     }
@@ -57,29 +53,29 @@ public:
         return std::make_pair(_x, _y);
     }
 
-    void ClawRobot::SetDirection(int direction)
+    void ClawRobot::setDirection(int direction)
     {
         switch (direction)
         {
-            case 0:
-                _z = Directions::Right;
-                break;
-            case 90:
-                _z = Directions::Down;
-                break;
-            case 180:
-                _z = Directions::Left;
-                break;
-            case 270:
-                _z = Directions::Up;
-                break;
-            default:
-                std::cout << "Invalid direction!" << std::endl;
-                break;
+        case 0:
+            _z = Directions::Right;
+            break;
+        case 90:
+            _z = Directions::Down;
+            break;
+        case 180:
+            _z = Directions::Left;
+            break;
+        case 270:
+            _z = Directions::Up;
+            break;
+        default:
+            std::cout << "Invalid direction!" << std::endl;
+            break;
         }
     }
 
-    Directions ClawRobot ::GetDirection()
+    Directions ClawRobot ::getDirection()
     {
         return _z;
     }
