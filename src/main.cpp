@@ -8,21 +8,25 @@
 #include "Objects/Interactable/IdleRabbids/IdleRabbids.hpp"
 #include "Objects/Interactable/SedotWC/SedotWC.hpp"
 
-
 #include "Command/ICommand.hpp"
 #include "Command/MoveForward/MoveForward.hpp"
 #include "Command/MoveBackward/MoveBackward.hpp"
+
+#include "Core/GameManager/GameManager.hpp"
 
 #include "Enum/Commands.hpp"
 
 int main()
 {
-	//IControlable *rabbids = new ClawRobot();
-	//ICommand *command = new MoveBackward(rabbids);
+	// IControlable *rabbids = new ClawRobot();
+	// ICommand *command = new MoveBackward(rabbids);
 
-	//rabbids->setCommand(command);
-	//rabbids->getCommand(Commands::CommandBackward)->execute();
+	// rabbids->setCommand(command);
+	// rabbids->getCommand(Commands::CommandBackward)->execute();
 
-	IInteractable* button = new SedotWC();
-	button->react();
+	// IInteractable* button = new SedotWC();
+	// button->react();
+
+	GameManager *gameManager = new GameManager();
+	gameManager->startGame();
 }
