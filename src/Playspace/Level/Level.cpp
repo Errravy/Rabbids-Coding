@@ -34,5 +34,5 @@ void Level::setControlable(IControlable *controlable)
 
 bool Level::isCompleted()
 {
-    return _isCompleted;
+    return false;
 }

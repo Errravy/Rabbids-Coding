@@ -18,8 +18,6 @@ private:
     Level *_currentLevel;
 
 public:
-    static GameManager *Instance;
-
     GameManager();
 
     void startGame();

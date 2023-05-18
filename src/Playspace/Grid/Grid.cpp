@@ -1,9 +1,8 @@
 #include "Grid.hpp"
 
-Grid::Grid(int x, int y)
+Grid::Grid(int width, int height)
 {
-    std::cout << "Grid constructor" << std::endl;
-    initializeGridAndCell(_width, _height);
+    initializeGridAndCell(width, height);
     generateGrid();
 }
 

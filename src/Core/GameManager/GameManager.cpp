@@ -1,14 +1,7 @@
 #include "GameManager.hpp"
 
-GameManager *GameManager::Instance = nullptr;
-
 GameManager::GameManager()
 {
-    if (Instance == nullptr)
-    {
-        Instance = this;
-    }
-
     _gameState = GameStates::NotStarted;
     _currentLevel = LevelManager::getLevel();
 }
@@ -17,14 +10,15 @@ void GameManager::startGame()
 {
     _gameState = GameStates::Playing;
 
-    DisplayManager::renderLevel(_currentLevel);
     while (_gameState == GameStates::Playing)
     {
+        // DisplayManager::renderLevel(_currentLevel);
         // _currentLevel->showAvailableMoves();
         int move = InputManager::getMove();
 
         if (move == 1)
         {
+            std::cout << "Left";
             // _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandLeft));
         }
         else if (move == 2)
@@ -46,9 +40,11 @@ void GameManager::startGame()
 
         if (_currentLevel->isCompleted())
         {
-            endGame();
+            // endGame();
         }
     }
+
+    std::cout << "Game Started" << std::endl;
 }
 
 void GameManager::endGame()

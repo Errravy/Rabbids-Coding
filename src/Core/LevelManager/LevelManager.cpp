@@ -15,6 +15,6 @@ Level *LevelManager::getLevel()
     IControlable *controlable = dynamic_cast<IControlable *>(new Rabbids());
     controlable->setPosition(5, 5);
     newLevel->setControlable(controlable);
-    newLevel->getGrid()->checkCell(controlable);
+    // newLevel->getGrid()->checkCell(controlable);
     return newLevel;
 }
