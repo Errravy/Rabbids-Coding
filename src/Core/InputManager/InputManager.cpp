@@ -6,5 +6,8 @@ InputManager::InputManager()
 
 int InputManager::getMove()
 {
-    return 1;
+    int move = 0;
+    std::cin >> move;
+    std::cin.get();
+    return move;
 }

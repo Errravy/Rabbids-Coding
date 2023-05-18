@@ -12,39 +12,36 @@ void GameManager::startGame()
 
     while (_gameState == GameStates::Playing)
     {
-        // DisplayManager::renderLevel(_currentLevel);
+        DisplayManager::renderLevel(_currentLevel);
         // _currentLevel->showAvailableMoves();
         int move = InputManager::getMove();
 
         if (move == 1)
         {
-            std::cout << "Left";
-            // _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandLeft));
+            _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandLeft));
         }
         else if (move == 2)
         {
-            // _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandRight));
+            _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandRight));
         }
         else if (move == 3)
         {
-            // _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandForward));
+            _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandForward));
         }
         else if (move == 4)
         {
-            // _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandBackward));
+            _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::CommandBackward));
         }
         else if (move == 5)
         {
-            // _currentLevel->getInvoker()->executeCommands();
+            _currentLevel->getInvoker()->executeCommands();
         }
 
         if (_currentLevel->isCompleted())
         {
-            // endGame();
+            endGame();
         }
     }
-
-    std::cout << "Game Started" << std::endl;
 }
 
 void GameManager::endGame()
