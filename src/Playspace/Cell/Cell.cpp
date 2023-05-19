@@ -5,7 +5,7 @@ Cell::Cell(int x, int y)
     _x = x;
     _y = y;
     _obj = nullptr;
-    _cellObj = _walkable;
+    _cellObj = WALKABLE;
 }
 
 void Cell::checkObject(IObjects *obj)
@@ -20,14 +20,14 @@ void Cell::checkObject(IObjects *obj)
     {
         _isWalkable = true;
         _obj = nullptr;
-        _cellObj = _walkable;
+        _cellObj = WALKABLE;
     }
 }
 
 void Cell::setToBlankCell()
 {
     _isWalkable = false;
-    _cellObj = _blank;
+    _cellObj = BLANK;
 }
 
 std::string Cell::getCellObj()
@@ -47,5 +47,5 @@ bool Cell::isWalkable()
 
 bool Cell::isBlocked()
 {
-    return _cellObj == _blank;
+    return _cellObj == BLANK;
 }

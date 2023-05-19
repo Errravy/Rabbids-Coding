@@ -1,5 +1,8 @@
 #pragma once
 
+#define WALKABLE "-"
+#define BLANK " "
+
 #include "../../Objects/IObjects.hpp"
 
 class Cell
@@ -11,8 +14,6 @@ private:
     std::string _cellObj;
 
     bool _isWalkable = true;
-    const std::string _walkable = "-";
-    const std::string _blank = " ";
 
 public:
     Cell(int, int);
