@@ -12,6 +12,7 @@ Level *LevelManager::getLevel()
 
 void LevelManager::setupLevels()
 {
+    fs::path path = FileHandler::getRelativePath("Levels");
     createLevel("Level 1");
 }
 

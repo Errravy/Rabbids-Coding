@@ -1,6 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <filesystem>
+
+#include "../../FileSystem/FileHandler.hpp"
 
 #include "../../Playspace/Level/Level.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
@@ -10,6 +13,8 @@
 #include "../../Command/MoveBackward/MoveBackward.hpp"
 
 #define LEVEL_FOLDER_PATH = "Levels"
+
+namespace fs = std::filesystem;
 
 class LevelManager
 {
