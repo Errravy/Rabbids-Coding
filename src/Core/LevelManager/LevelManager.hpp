@@ -15,6 +15,36 @@
 #define LEVEL_FOLDER_PATH = "Levels"
 
 namespace fs = std::filesystem;
+namespace LD
+{
+    struct LevelData
+    {
+        struct GridSize
+        {
+            int _width;
+            int _height;
+        };
+
+        struct Position
+        {
+            int _x;
+            int _y;
+        };
+
+        struct Object
+        {
+            std::string _objectType;
+            std::string _objectEnum;
+            Position _position;
+        };
+
+        std::string _levelName;
+        std::vector<std::string> _commands;
+        std::vector<Object> _objects;
+        std::vector<Position> _blankCells;
+        GridSize _gridSize;
+    };
+};
 
 class LevelManager
 {

@@ -20,3 +20,20 @@ std::vector<fs::path> FileHandler::getAllFilesInDirectory(const std::string &fil
 
     return filePaths;
 }
+
+template <typename T>
+T FileHandler::readFromJson(const std::string &filePath)
+{
+    std::cout << "Path : " << getRelativePath(filePath) << std::endl;
+    std::ifstream file(getRelativePath(filePath));
+
+    if (file.is_open())
+    {
+        json jsonData;
+        file >> jsonData;
+        return jsonData.get<T>();
+    }
+
+    // throw std::runtime_error("Failed to open file: " + filePath);
+    return nullptr;
+}
