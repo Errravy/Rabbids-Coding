@@ -1,6 +1,6 @@
 #pragma once
 
-enum GameStates
+enum class GameStates
 {
     NotStarted,
     Playing

@@ -1,6 +1,6 @@
 #pragma once
 
-enum Controlables
+enum class Controlables
 {
     Rabbids,
     VacuumRobot,

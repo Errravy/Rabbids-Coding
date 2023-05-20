@@ -14,6 +14,7 @@
 class GameManager
 {
 private:
+    LevelManager *_levelManager;
     GameStates _gameState;
     Level *_currentLevel;
 

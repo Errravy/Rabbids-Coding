@@ -1,9 +1,9 @@
 #pragma once
 
-enum Commands
+enum class Commands
 {
-    CommandForward,
-    CommandBackward,
-    CommandLeft,
-    CommandRight,
+    Forward,
+    Backward,
+    Left,
+    Right,
 };

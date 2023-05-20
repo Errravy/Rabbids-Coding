@@ -12,7 +12,7 @@ void TurnRight::execute()
 
 Commands TurnRight::getEnum()
 {
-    return Commands::CommandRight;
+    return Commands::Right;
 }
 
 void TurnRight::rotate()

@@ -13,7 +13,7 @@ void MoveForward::execute()
 
 Commands MoveForward::getEnum()
 {
-    return Commands::CommandForward;
+    return Commands::Forward;
 }
 
 void MoveForward::moveByDirection()

@@ -1,6 +1,6 @@
 #pragma once
 
-enum Objects
+enum class Objects
 {
     Button,
     ElectricFence,

@@ -1,6 +1,6 @@
 #pragma once
 
-enum Interactables
+enum class Interactables
 {
     Button,
     ElectricFence,

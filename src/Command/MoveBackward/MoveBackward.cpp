@@ -13,7 +13,7 @@ void MoveBackward::execute()
 
 Commands MoveBackward::getEnum()
 {
-    return Commands::CommandBackward;
+    return Commands::Backward;
 }
 
 void MoveBackward::moveByDirection()
