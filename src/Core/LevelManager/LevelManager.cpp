@@ -12,8 +12,12 @@ Level *LevelManager::getLevel()
 
 void LevelManager::setupLevels()
 {
-    fs::path path = FileHandler::getRelativePath("Levels");
-    createLevel("Level 1");
+    std::vector<fs::path> filePaths = FileHandler::getAllFilesInDirectory("Levels");
+    for (auto &&file : filePaths)
+    {
+        std::string fileNameWithoutExtension = file.stem().string();
+        createLevel(fileNameWithoutExtension);
+    }
 }
 
 void LevelManager::createLevel(const std::string &levelName)
