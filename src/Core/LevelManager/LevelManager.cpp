@@ -23,32 +23,64 @@ void LevelManager::setupLevels()
 void LevelManager::createLevel(const std::string &levelName)
 {
     LevelManager::LevelData levelData = FileHandler::readFromJson<LevelManager::LevelData>("Levels/" + levelName + ".json");
-    std::cout << levelData._levelName << std::endl;
 
-    Level *newLevel = new Level(levelName, 10, 10, new Invoker());
-    IControlable *controlable = dynamic_cast<IControlable *>(new Rabbids());
-    controlable->setPosition(5, 5);
-    controlable->setCommand(new MoveForward(controlable));
-    controlable->setCommand(new MoveBackward(controlable));
+    Invoker *invoker = new Invoker();
+    Level *newLevel = new Level(levelData._levelName, levelData._gridSize._width, levelData._gridSize._height, invoker);
 
-    newLevel->setControlable(controlable);
-    newLevel->getGrid()->checkCell(controlable);
+    for (const auto &cell : levelData._blankCells)
+    {
+        newLevel->getGrid()->getCells()[std::make_pair(cell._x, cell._y)]->setToBlankCell();
+    }
+
+    for (const auto &objectItem : levelData._objects)
+    {
+        // std::pair<IObjects *, bool> objectPair = createNewObject(objectItem);
+
+        // IObjects *newObject = objectPair.first;
+        // std::cout << "Created: " << newObject->getObjectSymbol() << std::endl;
+        // bool isControlable = objectPair.second;
+
+        // if (isControlable)
+        // {
+        //     for (const auto &command : levelData._commands)
+        //     {
+        //         // ICommand *iCommand = createNewCommand(static_cast<IControlable *>(newObject), command);
+        //         // static_cast<IControlable *>(newObject)->setCommand(iCommand);
+        //     }
+
+        //     newLevel->setControlable(static_cast<IControlable *>(newObject));
+        // }
+
+        // newLevel->getGrid()->checkCell(newObject);
+    }
 
     _levels.push_back(newLevel);
 }
 
-std::pair<IObjects *, bool> LevelManager::createNewObject()
+std::pair<IObjects *, bool> LevelManager::createNewObject(const LevelManager::LevelData::Object &objectItem)
 {
-    return std::make_pair(nullptr, false);
+    std::cout << "Created new object: " << objectItem._objectType << std::endl;
+    IObjects *newObject = Factory::createObject(static_cast<Objects>(std::stoi(objectItem._objectType)));
+    setObjectPosition(newObject, objectItem._position);
+
+    if (objectItem._objectEnum == "Controlable")
+        return std::make_pair(newObject, true);
+    else
+        return std::make_pair(newObject, false);
 }
 
 ICommand *LevelManager::createNewCommand(IControlable *controlable, const std::string &command)
 {
+    std::cout << "Created new command: " << command << std::endl;
+    ICommand *newCommand = Factory::createCommand(controlable, static_cast<Commands>(std::stoi(command)));
+    return newCommand;
     return nullptr;
 }
 
-void LevelManager::setObjectPosition(IObjects *object)
+void LevelManager::setObjectPosition(IObjects *object, const LevelManager::LevelData::Position &position)
 {
+    std::cout << "Set object position: " << position._x << " " << position._y << std::endl;
+    object->setPosition(position._x, position._y);
 }
 
 void to_json(json &j, const LevelManager::LevelData &levelData)
@@ -63,8 +95,6 @@ void from_json(const json &j, LevelManager::LevelData &levelData)
     j.at("levelName").get_to(levelData._levelName);
     j.at("gridSize").at("width").get_to(levelData._gridSize._width);
     j.at("gridSize").at("height").get_to(levelData._gridSize._height);
-
-    std::cout << levelData._levelName << std::endl;
 
     for (const auto &command : j.at("commands"))
     {

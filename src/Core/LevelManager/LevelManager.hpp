@@ -6,6 +6,8 @@
 
 #include "../../FileSystem/FileHandler.hpp"
 
+#include "../../Factory/Factory.hpp"
+
 #include "../../Playspace/Level/Level.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
 #include "../../Objects/Controlable/Rabbids/Rabbids.hpp"
@@ -62,7 +64,7 @@ private:
 
     void setupLevels();
     void createLevel(const std::string &);
-    std::pair<IObjects *, bool> createNewObject();
+    std::pair<IObjects *, bool> createNewObject(const LevelManager::LevelData::Object &);
     ICommand *createNewCommand(IControlable *, const std::string &);
-    void setObjectPosition(IObjects *);
+    void setObjectPosition(IObjects *, const LevelManager::LevelData::Position &);
 };
