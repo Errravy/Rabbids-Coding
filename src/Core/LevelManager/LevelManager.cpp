@@ -22,7 +22,7 @@ void LevelManager::setupLevels()
 
 void LevelManager::createLevel(const std::string &levelName)
 {
-    LD::LevelData levelData = FileHandler::readFromJson<LD::LevelData>("Levels/" + levelName + ".json");
+    LevelManager::LevelData levelData = FileHandler::readFromJson<LevelManager::LevelData>("Levels/" + levelName + ".json");
     std::cout << levelData._levelName << std::endl;
 
     Level *newLevel = new Level(levelName, 10, 10, new Invoker());
@@ -51,44 +51,41 @@ void LevelManager::setObjectPosition(IObjects *object)
 {
 }
 
-namespace LD
+void to_json(json &j, const LevelManager::LevelData &levelData)
 {
-    void to_json(json &j, const LevelData &levelData)
+    j = json{
+        {"levelName", levelData._levelName},
+    };
+}
+
+void from_json(const json &j, LevelManager::LevelData &levelData)
+{
+    j.at("levelName").get_to(levelData._levelName);
+    j.at("gridSize").at("width").get_to(levelData._gridSize._width);
+    j.at("gridSize").at("height").get_to(levelData._gridSize._height);
+
+    std::cout << levelData._levelName << std::endl;
+
+    for (const auto &command : j.at("commands"))
     {
-        j = json{
-            {"levelName", levelData._levelName},
-        };
+        levelData._commands.push_back(command);
     }
 
-    void from_json(const json &j, LevelData &levelData)
+    for (const auto &object : j.at("objects"))
     {
-        j.at("levelName").get_to(levelData._levelName);
-        j.at("gridSize").at("width").get_to(levelData._gridSize._width);
-        j.at("gridSize").at("height").get_to(levelData._gridSize._height);
+        LevelManager::LevelData::Object newObject;
+        object.at("objectType").get_to(newObject._objectType);
+        object.at("objectEnum").get_to(newObject._objectEnum);
+        object.at("position").at("x").get_to(newObject._position._x);
+        object.at("position").at("y").get_to(newObject._position._y);
+        levelData._objects.push_back(newObject);
+    }
 
-        std::cout << levelData._levelName << std::endl;
-
-        for (const auto &command : j.at("commands"))
-        {
-            levelData._commands.push_back(command);
-        }
-
-        for (const auto &object : j.at("objects"))
-        {
-            LevelData::Object newObject;
-            object.at("objectType").get_to(newObject._objectType);
-            object.at("objectEnum").get_to(newObject._objectEnum);
-            object.at("position").at("x").get_to(newObject._position._x);
-            object.at("position").at("y").get_to(newObject._position._y);
-            levelData._objects.push_back(newObject);
-        }
-
-        for (const auto &blankCell : j.at("blankCells"))
-        {
-            LevelData::Position newPosition;
-            blankCell.at("x").get_to(newPosition._x);
-            blankCell.at("y").get_to(newPosition._y);
-            levelData._blankCells.push_back(newPosition);
-        }
+    for (const auto &blankCell : j.at("blankCells"))
+    {
+        LevelManager::LevelData::Position newPosition;
+        blankCell.at("x").get_to(newPosition._x);
+        blankCell.at("y").get_to(newPosition._y);
+        levelData._blankCells.push_back(newPosition);
     }
 }

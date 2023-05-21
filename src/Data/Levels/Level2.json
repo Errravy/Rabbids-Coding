@@ -1,6 +1,6 @@
 {
     "levelName": "Level 2",
-    "commands": ["Forward", "Backward", "Left", "Right"],
+    "commands": ["Forward", "Backward", "Left"],
     "objects": [
         {
             "objectEnum": "Controlable",

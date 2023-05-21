@@ -34,6 +34,7 @@ T FileHandler::readFromJson(const std::string &filePath)
         return jsonData.get<T>();
     }
 
-    // throw std::runtime_error("Failed to open file: " + filePath);
-    return nullptr;
+    throw std::runtime_error("Failed to open file: " + filePath);
 }
+
+template LevelManager::LevelData FileHandler::readFromJson<LevelManager::LevelData>(const std::string &);

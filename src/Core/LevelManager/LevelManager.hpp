@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <filesystem>
+#include <nlohmann/json.hpp>
 
 #include "../../FileSystem/FileHandler.hpp"
 
@@ -14,9 +15,12 @@
 
 #define LEVEL_FOLDER_PATH = "Levels"
 
+using json = nlohmann::json;
 namespace fs = std::filesystem;
-namespace LD
+
+class LevelManager
 {
+public:
     struct LevelData
     {
         struct GridSize
@@ -43,12 +47,11 @@ namespace LD
         std::vector<Object> _objects;
         std::vector<Position> _blankCells;
         GridSize _gridSize;
-    };
-};
 
-class LevelManager
-{
-public:
+        friend void to_json(json &, const LevelData &);
+        friend void from_json(const json &, LevelData &);
+    };
+
     LevelManager();
 
     Level *getLevel();
