@@ -1,5 +1,4 @@
 #include "ElectricFence.hpp"
-#include <iostream>
 
 ElectricFence::ElectricFence()
 {

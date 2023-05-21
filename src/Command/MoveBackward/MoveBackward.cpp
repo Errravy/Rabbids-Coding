@@ -1,5 +1,4 @@
 #include "MoveBackward.hpp"
-#include <iostream>
 
 MoveBackward::MoveBackward(IControlable *cObj)
 {

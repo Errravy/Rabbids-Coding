@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "../IInteractable.hpp"
 
 class ElectricFence : public IInteractable
@@ -11,11 +12,11 @@ private:
 
 public:
     ElectricFence();
-    void setPositionX(int x);
-    void setPositionY(int y);
-    void setPosition(int x, int y);
-    std::pair<int, int> getPosition();
-    void react();
-    bool isSucked();
-    std::string getObjectSymbol();
+    void setPositionX(int) override;
+    void setPositionY(int) override;
+    void setPosition(int, int) override;
+    std::pair<int, int> getPosition() override;
+    void react() override;
+    bool isSucked() override;
+    std::string getObjectSymbol() override;
 };
