@@ -27,6 +27,7 @@
     <ClCompile Include="src\Core\GameManager\GameManager.cpp" />
     <ClCompile Include="src\Core\InputManager\InputManager.cpp" />
     <ClCompile Include="src\Core\LevelManager\LevelManager.cpp" />
+    <ClCompile Include="src\Enum\Converter\Converter.cpp" />
     <ClCompile Include="src\Factory\Factory.cpp" />
     <ClCompile Include="src\FileSystem\FileHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="src\Core\LevelManager\LevelManager.hpp" />
     <ClInclude Include="src\Enum\Commands.hpp" />
     <ClInclude Include="src\Enum\Controlables.hpp" />
+    <ClInclude Include="src\Enum\Converter\Converter.hpp" />
     <ClInclude Include="src\Enum\Directions.hpp" />
     <ClInclude Include="src\Enum\GameStates.hpp" />
     <ClInclude Include="src\Enum\Interactables.hpp" />

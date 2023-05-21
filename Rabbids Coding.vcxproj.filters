@@ -84,6 +84,9 @@
     <ClCompile Include="src\Objects\Interactable\Button\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Enum\Converter\Converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Objects\IObjects.hpp">
@@ -180,6 +183,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Objects\Interactable\Button\Button.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enum\Converter\Converter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

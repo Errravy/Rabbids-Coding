@@ -13,7 +13,7 @@ void GameManager::startGame()
 
     while (_gameState == GameStates::Playing)
     {
-        // DisplayManager::renderLevel(_currentLevel);
+        DisplayManager::renderLevel(_currentLevel);
         // _currentLevel->showAvailableMoves();
         int move = InputManager::getMove();
 

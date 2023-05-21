@@ -34,24 +34,23 @@ void LevelManager::createLevel(const std::string &levelName)
 
     for (const auto &objectItem : levelData._objects)
     {
-        // std::pair<IObjects *, bool> objectPair = createNewObject(objectItem);
+        std::pair<IObjects *, bool> objectPair = createNewObject(objectItem);
 
-        // IObjects *newObject = objectPair.first;
-        // std::cout << "Created: " << newObject->getObjectSymbol() << std::endl;
-        // bool isControlable = objectPair.second;
+        IObjects *newObject = objectPair.first;
+        bool isControlable = objectPair.second;
 
-        // if (isControlable)
-        // {
-        //     for (const auto &command : levelData._commands)
-        //     {
-        //         // ICommand *iCommand = createNewCommand(static_cast<IControlable *>(newObject), command);
-        //         // static_cast<IControlable *>(newObject)->setCommand(iCommand);
-        //     }
+        if (isControlable)
+        {
+            for (const auto &command : levelData._commands)
+            {
+                ICommand *iCommand = createNewCommand(static_cast<IControlable *>(newObject), command);
+                static_cast<IControlable *>(newObject)->setCommand(iCommand);
+            }
 
-        //     newLevel->setControlable(static_cast<IControlable *>(newObject));
-        // }
+            newLevel->setControlable(static_cast<IControlable *>(newObject));
+        }
 
-        // newLevel->getGrid()->checkCell(newObject);
+        newLevel->getGrid()->checkCell(newObject);
     }
 
     _levels.push_back(newLevel);
@@ -59,8 +58,7 @@ void LevelManager::createLevel(const std::string &levelName)
 
 std::pair<IObjects *, bool> LevelManager::createNewObject(const LevelManager::LevelData::Object &objectItem)
 {
-    std::cout << "Created new object: " << objectItem._objectType << std::endl;
-    IObjects *newObject = Factory::createObject(static_cast<Objects>(std::stoi(objectItem._objectType)));
+    IObjects *newObject = Factory::createObject(Converter::convertStringToObjects(objectItem._objectType));
     setObjectPosition(newObject, objectItem._position);
 
     if (objectItem._objectEnum == "Controlable")
@@ -71,15 +69,13 @@ std::pair<IObjects *, bool> LevelManager::createNewObject(const LevelManager::Le
 
 ICommand *LevelManager::createNewCommand(IControlable *controlable, const std::string &command)
 {
-    std::cout << "Created new command: " << command << std::endl;
-    ICommand *newCommand = Factory::createCommand(controlable, static_cast<Commands>(std::stoi(command)));
+    ICommand *newCommand = Factory::createCommand(controlable, Converter::convertStringToCommands(command));
     return newCommand;
     return nullptr;
 }
 
 void LevelManager::setObjectPosition(IObjects *object, const LevelManager::LevelData::Position &position)
 {
-    std::cout << "Set object position: " << position._x << " " << position._y << std::endl;
     object->setPosition(position._x, position._y);
 }
 

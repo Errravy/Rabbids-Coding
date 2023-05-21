@@ -18,15 +18,6 @@
 
 int main()
 {
-	// IControlable *rabbids = new ClawRobot();
-	// ICommand *command = new MoveBackward(rabbids);
-
-	// rabbids->setCommand(command);
-	// rabbids->getCommand(Commands::CommandBackward)->execute();
-
-	// IInteractable* button = new SedotWC();
-	// button->react();
-
 	GameManager *gameManager = new GameManager();
 	gameManager->startGame();
 }

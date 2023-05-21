@@ -7,6 +7,7 @@
 #include "../../FileSystem/FileHandler.hpp"
 
 #include "../../Factory/Factory.hpp"
+#include "../../Enum/Converter/Converter.hpp"
 
 #include "../../Playspace/Level/Level.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
