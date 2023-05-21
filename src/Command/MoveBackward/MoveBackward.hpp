@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "ICommand.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
 
@@ -10,6 +11,6 @@ private:
 
 public:
     MoveBackward(IControlable *cObj);
-    void execute();
-    Commands getEnum();
+    void execute() override;
+    Commands getEnum() override;
 };
