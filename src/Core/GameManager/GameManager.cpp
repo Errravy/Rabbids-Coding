@@ -4,10 +4,23 @@ GameManager::GameManager()
 {
     _levelManager = new LevelManager();
     _gameState = GameStates::NotStarted;
-    _currentLevel = _levelManager->getLevel();
 }
 
 void GameManager::startGame()
+{
+    std::cout << "Select level: " << std::endl;
+    for (int i = 0; i < _levelManager->getLevelNames().size(); i++)
+    {
+        std::cout << i + 1 << ". " << _levelManager->getLevelNames()[i] << std::endl;
+    }
+
+    int levelIndex = InputManager::getLevelIndex(_levelManager->getLevelNames().size());
+    loadLevel(_levelManager->getLevel(levelIndex - 1));
+
+    playGame();
+}
+
+void GameManager::playGame()
 {
     _gameState = GameStates::Playing;
 

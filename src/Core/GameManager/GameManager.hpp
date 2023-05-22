@@ -22,6 +22,7 @@ public:
     GameManager();
 
     void startGame();
+    void playGame();
     void endGame();
     void loadLevel(Level *);
 };

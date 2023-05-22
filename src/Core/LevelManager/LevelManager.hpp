@@ -57,7 +57,8 @@ public:
 
     LevelManager();
 
-    Level *getLevel();
+    Level *getLevel(int);
+    std::vector<std::string> getLevelNames();
 
 private:
     std::vector<Level *> _levels;

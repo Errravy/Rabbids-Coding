@@ -5,7 +5,6 @@
 class InputManager
 {
 public:
-    InputManager();
-
     static int getMove();
+    static int getLevelIndex(int maxLevelIndex);
 };

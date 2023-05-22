@@ -5,9 +5,19 @@ LevelManager::LevelManager()
     setupLevels();
 }
 
-Level *LevelManager::getLevel()
+Level *LevelManager::getLevel(int levelIndex)
 {
-    return _levels[_currentLevelIndex];
+    return _levels[levelIndex];
+}
+
+std::vector<std::string> LevelManager::getLevelNames()
+{
+    std::vector<std::string> levelNames;
+    for (auto &&level : _levels)
+    {
+        levelNames.push_back(level->getLevelName());
+    }
+    return levelNames;
 }
 
 void LevelManager::setupLevels()
