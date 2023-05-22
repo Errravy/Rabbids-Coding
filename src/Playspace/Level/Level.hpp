@@ -17,6 +17,7 @@ private:
 public:
     Level(std::string, int, int, Invoker *);
 
+    void showAvailableMoves();
     Grid *getGrid();
     std::string getLevelName();
     Invoker *getInvoker();

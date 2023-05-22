@@ -14,4 +14,5 @@ public:
 
     void execute() override;
     Commands getEnum() override;
+    std::string getCommandName() override;
 };

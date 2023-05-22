@@ -5,6 +5,11 @@ TurnRight::TurnRight(IControlable *cObj)
     _cObj = cObj;
 }
 
+std::string TurnRight::getCommandName()
+{
+    return "Turn Right";
+}
+
 void TurnRight::execute()
 {
     rotate();

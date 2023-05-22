@@ -5,6 +5,15 @@ LevelManager::LevelManager()
     setupLevels();
 }
 
+void LevelManager::showAvailableLevels()
+{
+    std::cout << "Select level: " << std::endl;
+    for (int i = 0; i < getLevelNames().size(); i++)
+    {
+        std::cout << i + 1 << ". " << getLevelNames()[i] << std::endl;
+    }
+}
+
 Level *LevelManager::getLevel(int levelIndex)
 {
     return _levels[levelIndex];

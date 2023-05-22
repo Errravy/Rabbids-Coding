@@ -59,6 +59,7 @@ public:
 
     Level *getLevel(int);
     std::vector<std::string> getLevelNames();
+    void showAvailableLevels();
 
 private:
     std::vector<Level *> _levels;

@@ -16,6 +16,7 @@ public:
 
     ICommand *setCommand(ICommand *) override;
     ICommand *getCommand(Commands) override;
+    std::vector<std::string> getCommands() override;
     void setDirection(int) override;
     Directions getDirection() override;
 };

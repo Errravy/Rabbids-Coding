@@ -7,6 +7,15 @@ Level::Level(std::string levelName, int width, int height, Invoker *invoker)
     _invoker = invoker;
 }
 
+void Level::showAvailableMoves()
+{
+    std::cout << "Available moves:" << std::endl;
+    for (int i = 0; i < _controlable->getCommands().size(); i++)
+    {
+        std::cout << i + 1 << ". " << _controlable->getCommands()[i] << std::endl;
+    }
+}
+
 Grid *Level::getGrid()
 {
     return _grid;

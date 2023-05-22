@@ -1,6 +1,7 @@
 #pragma once
 
 #include <unordered_map>
+#include <vector>
 
 #include "../IObjects.hpp"
 #include "../../Enum/Commands.hpp"
@@ -16,6 +17,7 @@ protected:
 public:
     virtual ICommand *setCommand(ICommand *) = 0;
     virtual ICommand *getCommand(Commands) = 0;
+    virtual std::vector<std::string> getCommands() = 0;
     virtual void setDirection(int) = 0;
     virtual Directions getDirection() = 0;
 };

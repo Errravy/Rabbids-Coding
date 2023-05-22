@@ -49,6 +49,16 @@ ICommand *Rabbids::getCommand(Commands command)
     return _command[command];
 }
 
+std::vector<std::string> Rabbids::getCommands()
+{
+    std::vector<std::string> commands;
+    for (auto &command : _command)
+    {
+        commands.push_back(command.second->getCommandName());
+    }
+    return commands;
+}
+
 void Rabbids::setDirection(int direction)
 {
     switch (direction)
