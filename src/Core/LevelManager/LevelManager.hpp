@@ -51,7 +51,6 @@ public:
         std::vector<Position> _blankCells;
         GridSize _gridSize;
 
-        friend void to_json(json &, const LevelData &);
         friend void from_json(const json &, LevelData &);
     };
 

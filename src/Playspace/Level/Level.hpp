@@ -12,6 +12,7 @@ private:
     Invoker *_invoker;
     IControlable *_controlable;
 
+    int _score = 0;
     bool _isCompleted = false;
 
 public:
@@ -20,6 +21,7 @@ public:
     void showAvailableMoves();
     Grid *getGrid();
     std::string getLevelName();
+    int getScore();
     Invoker *getInvoker();
     IControlable *getControlable();
     void setControlable(IControlable *);

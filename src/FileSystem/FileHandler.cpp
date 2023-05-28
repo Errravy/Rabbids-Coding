@@ -36,4 +36,30 @@ T FileHandler::readFromJson(const std::string &filePath)
     throw std::runtime_error("Failed to open file: " + filePath);
 }
 
+template <typename T>
+void FileHandler::writeToJson(const std::string &filePath, const T &data)
+{
+    std::ifstream file(getRelativePath(filePath));
+
+    if (file.is_open())
+    {
+        json jsonData;
+        file >> jsonData;
+
+        std::ofstream outputFile(getRelativePath(filePath));
+
+        if (outputFile.is_open())
+        {
+            json newData = data;
+            jsonData["datas"].push_back(newData);
+
+            outputFile << jsonData.dump(4);
+            return;
+        }
+
+        throw std::runtime_error("Failed to open file: " + filePath);
+    }
+}
+
 template LevelManager::LevelData FileHandler::readFromJson<LevelManager::LevelData>(const std::string &);
+template void FileHandler::writeToJson<DataPersistence::GameData>(const std::string &, const DataPersistence::GameData &);

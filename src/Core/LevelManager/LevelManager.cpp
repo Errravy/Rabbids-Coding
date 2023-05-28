@@ -98,13 +98,6 @@ void LevelManager::setObjectPosition(IObjects *object, const LevelManager::Level
     object->setPosition(position._x, position._y);
 }
 
-void to_json(json &j, const LevelManager::LevelData &levelData)
-{
-    j = json{
-        {"levelName", levelData._levelName},
-    };
-}
-
 void from_json(const json &j, LevelManager::LevelData &levelData)
 {
     j.at("levelName").get_to(levelData._levelName);

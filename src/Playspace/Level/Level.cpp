@@ -26,6 +26,11 @@ std::string Level::getLevelName()
     return _levelName;
 }
 
+int Level::getScore()
+{
+    return _score;
+}
+
 Invoker *Level::getInvoker()
 {
     return _invoker;

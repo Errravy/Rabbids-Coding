@@ -8,6 +8,7 @@
 #include <map>
 
 #include "../Core/LevelManager/LevelManager.hpp"
+#include "../Core/DataPersistence/DataPersistence.hpp"
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
@@ -20,4 +21,6 @@ public:
 
     template <typename T>
     static T readFromJson(const std::string &);
+    template <typename T>
+    static void writeToJson(const std::string &, const T &);
 };

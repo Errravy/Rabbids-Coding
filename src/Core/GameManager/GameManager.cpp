@@ -44,6 +44,9 @@ void GameManager::playGame()
         else if (move == 5)
         {
             _currentLevel->getInvoker()->executeCommands();
+
+            // FIXME: Remove this line after implementing the objectives
+            DataPersistence::getInstance()->saveGame(_currentLevel);
         }
 
         if (_currentLevel->isCompleted())
