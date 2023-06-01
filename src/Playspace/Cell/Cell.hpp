@@ -24,6 +24,7 @@ public:
     void setToBlankCell();
     std::string getCellObj();
     IObjects *getObject();
+    IObjects* getCobj();
     bool isWalkable();
     bool isBlocked();
 };

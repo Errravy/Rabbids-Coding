@@ -61,6 +61,11 @@ IObjects *Cell::getObject()
     return _obj;
 }
 
+IObjects* Cell::getCobj()
+{
+    return _cobj;
+}
+
 bool Cell::isWalkable()
 {
     return _isWalkable;
