@@ -50,7 +50,11 @@ void Grid::checkControlableObject(IObjects *obj)
     }
     else
     {
-        _previousCell->checkObject(_previousObject);
+        if (_previousCell->getCurrentObject() != nullptr)
+            _previousCell->checkObject(_previousCell->getCurrentObject());
+        else
+            _previousCell->checkObject(_previousObject);
+
         _previousCell = _cells[obj->getPosition()];
         _previousObject = obj;
     }
