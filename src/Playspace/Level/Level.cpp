@@ -13,6 +13,11 @@ void Level::showAvailableMoves()
     for (int i = 0; i < _controlable->getCommands().size(); i++)
     {
         std::cout << i + 1 << ". " << _controlable->getCommands()[i] << std::endl;
+
+        if (i == _controlable->getCommands().size() - 1)
+        {
+            std::cout << "9. Execute commands" << std::endl;
+        }
     }
 }
 

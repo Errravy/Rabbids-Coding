@@ -2,10 +2,10 @@
 
 #include "../IInteractable.hpp"
 
-class ElectricFence : public IInteractable
+class Tissue : public IInteractable
 {
 public:
-    ElectricFence();
+    Tissue();
 
     void setPositionX(int x);
     void setPositionY(int y);

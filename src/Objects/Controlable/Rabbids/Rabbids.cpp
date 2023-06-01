@@ -5,7 +5,7 @@ Rabbids::Rabbids()
     _x = 0;
     _y = 0;
     _z = Directions::Right;
-    _objectSymbol = "R";
+    _objectSymbol = "C";
 }
 
 void Rabbids::setPositionX(int x)

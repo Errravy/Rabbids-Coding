@@ -3,10 +3,10 @@
 #include "../IControlable.hpp"
 #include "../../../Command/ICommand.hpp"
 
-class ClawRobot : public IControlable
+class VacuumRobot : public IControlable
 {
 public:
-    ClawRobot();
+    VacuumRobot();
 
     void setPositionX(int) override;
     void setPositionY(int) override;

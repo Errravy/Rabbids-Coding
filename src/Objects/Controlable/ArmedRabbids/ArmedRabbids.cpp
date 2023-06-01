@@ -1,6 +1,6 @@
-#include "ClawRobot.hpp"
+#include "ArmedRabbids.hpp"
 
-ClawRobot::ClawRobot()
+ArmedRabbids::ArmedRabbids()
 {
     _x = 0;
     _y = 0;
@@ -8,33 +8,33 @@ ClawRobot::ClawRobot()
     _objectSymbol = "C";
 }
 
-void ClawRobot::setPositionX(int x)
+void ArmedRabbids::setPositionX(int x)
 {
     _x = x;
 }
 
-void ClawRobot::setPositionY(int y)
+void ArmedRabbids::setPositionY(int y)
 {
     _y = y;
 }
 
-void ClawRobot::setPosition(int x, int y)
+void ArmedRabbids::setPosition(int x, int y)
 {
     _x = x;
     _y = y;
 }
 
-std::pair<int, int> ClawRobot::getPosition()
+std::pair<int, int> ArmedRabbids::getPosition()
 {
     return std::make_pair(_x, _y);
 }
 
-std::string ClawRobot::getObjectSymbol()
+std::string ArmedRabbids::getObjectSymbol()
 {
     return _objectSymbol;
 }
 
-ICommand *ClawRobot::setCommand(ICommand *command)
+ICommand *ArmedRabbids::setCommand(ICommand *command)
 {
     if (_command.find(command->getEnum()) == _command.end())
     {
@@ -44,12 +44,12 @@ ICommand *ClawRobot::setCommand(ICommand *command)
     return nullptr;
 }
 
-ICommand *ClawRobot::getCommand(Commands command)
+ICommand *ArmedRabbids::getCommand(Commands command)
 {
     return _command[command];
 }
 
-std::vector<std::string> ClawRobot::getCommands()
+std::vector<std::string> ArmedRabbids::getCommands()
 {
     std::vector<std::string> commands;
     for (auto &command : _command)
@@ -59,7 +59,7 @@ std::vector<std::string> ClawRobot::getCommands()
     return commands;
 }
 
-void ClawRobot::setDirection(int direction)
+void ArmedRabbids::setDirection(int direction)
 {
     switch (direction)
     {
@@ -81,7 +81,7 @@ void ClawRobot::setDirection(int direction)
     }
 }
 
-Directions ClawRobot::getDirection()
+Directions ArmedRabbids::getDirection()
 {
     return _z;
 }

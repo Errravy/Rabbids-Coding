@@ -1,39 +1,40 @@
-#include "Vacuum.hpp"
+#include "VacuumRobot.hpp"
 
-Vacuum::Vacuum()
+VacuumRobot::VacuumRobot()
 {
     _x = 0;
     _y = 0;
     _z = Directions::Right;
+    _objectSymbol = "C";
 }
 
-void Vacuum::setPositionX(int x)
+void VacuumRobot::setPositionX(int x)
 {
     _x = x;
 }
 
-void Vacuum::setPositionY(int y)
+void VacuumRobot::setPositionY(int y)
 {
     _y = y;
 }
 
-void Vacuum::setPosition(int x, int y)
+void VacuumRobot::setPosition(int x, int y)
 {
     _x = x;
     _y = y;
 }
 
-std::pair<int, int> Vacuum::getPosition()
+std::pair<int, int> VacuumRobot::getPosition()
 {
     return std::make_pair(_x, _y);
 }
 
-std::string Vacuum::getObjectSymbol()
+std::string VacuumRobot::getObjectSymbol()
 {
     return _objectSymbol;
 }
 
-ICommand *Vacuum::setCommand(ICommand *command)
+ICommand *VacuumRobot::setCommand(ICommand *command)
 {
     if (_command.find(command->getEnum()) == _command.end())
     {
@@ -43,12 +44,22 @@ ICommand *Vacuum::setCommand(ICommand *command)
     return nullptr;
 }
 
-ICommand *Vacuum::getCommand(Commands command)
+ICommand *VacuumRobot::getCommand(Commands command)
 {
     return _command[command];
 }
 
-void Vacuum::setDirection(int direction)
+std::vector<std::string> VacuumRobot::getCommands()
+{
+    std::vector<std::string> commands;
+    for (auto &command : _command)
+    {
+        commands.push_back(command.second->getCommandName());
+    }
+    return commands;
+}
+
+void VacuumRobot::setDirection(int direction)
 {
     switch (direction)
     {
@@ -70,7 +81,7 @@ void Vacuum::setDirection(int direction)
     }
 }
 
-Directions Vacuum::getDirection()
+Directions VacuumRobot::getDirection()
 {
     return _z;
 }

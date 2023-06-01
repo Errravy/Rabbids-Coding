@@ -3,10 +3,10 @@
 #include "../IControlable.hpp"
 #include "../../../Command/ICommand.hpp"
 
-class Vacuum : public IControlable
+class ArmedRabbids : public IControlable
 {
 public:
-    Vacuum();
+    ArmedRabbids();
 
     void setPositionX(int) override;
     void setPositionY(int) override;
@@ -16,6 +16,7 @@ public:
 
     ICommand *setCommand(ICommand *) override;
     ICommand *getCommand(Commands) override;
+    std::vector<std::string> getCommands() override;
     void setDirection(int) override;
     Directions getDirection() override;
 };

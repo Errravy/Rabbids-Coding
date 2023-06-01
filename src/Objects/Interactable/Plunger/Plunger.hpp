@@ -2,10 +2,10 @@
 
 #include "../IInteractable.hpp"
 
-class ElectricFence : public IInteractable
+class Plunger : public IInteractable
 {
 public:
-    ElectricFence();
+    Plunger();
 
     void setPositionX(int x);
     void setPositionY(int y);

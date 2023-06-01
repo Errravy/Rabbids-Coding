@@ -41,7 +41,7 @@ void GameManager::playGame()
         {
             _currentLevel->getInvoker()->addCommand(_currentLevel->getControlable()->getCommand(Commands::Right));
         }
-        else if (move == 5)
+        else if (move == 9)
         {
             _currentLevel->getInvoker()->executeCommands();
 

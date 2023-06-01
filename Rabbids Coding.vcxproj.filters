@@ -33,16 +33,10 @@
     <ClCompile Include="src\Objects\Controlable\Rabbids\Rabbids.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Objects\Controlable\Vacuum\Vacuum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Objects\Controlable\ClawRobot\ClawRobot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Objects\Interactable\IdleRabbids\IdleRabbids.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Objects\Interactable\SedotWC\SedotWC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\GameManager\GameManager.cpp">
@@ -90,6 +84,27 @@
     <ClCompile Include="src\Core\DataPersistence\DataPersistence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Controlable\VacuumRobot\VacuumRobot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Interactable\CardBox\CardBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Interactable\Plunger\Plunger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Interactable\Saw\Saw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Interactable\Tissue\Tissue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Interactable\WashingMachine\WashingMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Objects\IObjects.hpp">
@@ -134,9 +149,6 @@
     <ClInclude Include="src\Objects\Controlable\Rabbids\Rabbids.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Objects\Controlable\Vacuum\Vacuum.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Objects\Controlable\ClawRobot\ClawRobot.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -144,9 +156,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Objects\Interactable\IInteractable.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Objects\Interactable\SedotWC\SedotWC.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\GameManager\GameManager.hpp">
@@ -192,6 +201,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\DataPersistence\DataPersistence.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Controlable\VacuumRobot\VacuumRobot.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Interactable\CardBox\CardBox.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Interactable\Plunger\Plunger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Interactable\Saw\Saw.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Interactable\Tissue\Tissue.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Interactable\WashingMachine\WashingMachine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

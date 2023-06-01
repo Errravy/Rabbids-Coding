@@ -1,11 +1,10 @@
 #include "ElectricFence.hpp"
-#include <iostream>
 
 ElectricFence::ElectricFence()
 {
     _x = 0;
     _y = 0;
-    _isSucked = false;
+    _objectSymbol = "I";
 }
 
 void ElectricFence::setPositionX(int x)
@@ -29,17 +28,12 @@ std::pair<int, int> ElectricFence::getPosition()
     return std::make_pair(_x, _y);
 }
 
+std::string ElectricFence::getObjectSymbol()
+{
+    return _objectSymbol;
+}
+
 void ElectricFence::react()
 {
     std::cout << "ElectricFence activated!" << std::endl;
-}
-
-bool ElectricFence::isSucked()
-{
-    return _isSucked;
-}
-
-std::string ElectricFence::getObjectSymbol()
-{
-    return objectSymbol;
 }

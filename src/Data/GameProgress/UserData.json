@@ -1,3 +1,14 @@
 {
-    "datas": []
+    "datas": [
+        {
+            "isCompleted": false,
+            "levelName": "Level 1",
+            "score": 42
+        },
+        {
+            "isCompleted": false,
+            "levelName": "Level 1",
+            "score": 68
+        }
+    ]
 }

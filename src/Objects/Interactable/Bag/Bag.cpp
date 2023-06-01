@@ -1,11 +1,10 @@
 #include "Bag.hpp"
-#include <iostream>
 
 Bag::Bag()
 {
     _x = 0;
     _y = 0;
-    _isSucked = false;
+    _objectSymbol = "I";
 }
 
 void Bag::setPositionX(int x)
@@ -29,17 +28,12 @@ std::pair<int, int> Bag::getPosition()
     return std::make_pair(_x, _y);
 }
 
+std::string Bag::getObjectSymbol()
+{
+    return _objectSymbol;
+}
+
 void Bag::react()
 {
     std::cout << "Bag activated!" << std::endl;
-}
-
-bool Bag::isSucked()
-{
-    return _isSucked;
-}
-
-std::string Bag::getObjectSymbol()
-{
-    return objectSymbol;
 }

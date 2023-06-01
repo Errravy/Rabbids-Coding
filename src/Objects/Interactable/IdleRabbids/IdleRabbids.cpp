@@ -4,6 +4,7 @@ IdleRabbids::IdleRabbids()
 {
     _x = 0;
     _y = 0;
+    _objectSymbol = "I";
 }
 
 void IdleRabbids::setPositionX(int x)
@@ -22,11 +23,6 @@ void IdleRabbids::setPosition(int x, int y)
     _y = y;
 }
 
-void IdleRabbids::react()
-{
-    std::cout << "IdleRabbid activated!" << std::endl;
-}
-
 std::pair<int, int> IdleRabbids::getPosition()
 {
     return std::make_pair(_x, _y);
@@ -35,4 +31,9 @@ std::pair<int, int> IdleRabbids::getPosition()
 std::string IdleRabbids::getObjectSymbol()
 {
     return _objectSymbol;
+}
+
+void IdleRabbids::react()
+{
+    std::cout << "IdleRabbids activated!" << std::endl;
 }
