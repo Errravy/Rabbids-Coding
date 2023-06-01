@@ -35,5 +35,6 @@ std::string Tissue::getObjectSymbol()
 
 void Tissue::react()
 {
-    std::cout << "Tissue activated!" << std::endl;
+    std::cout << "Tissue destroyed!!!" << std::endl;
+    self.reset();
 }

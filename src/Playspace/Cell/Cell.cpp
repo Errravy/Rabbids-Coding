@@ -1,4 +1,5 @@
-#include "Cell.hpp"
+ #include "Cell.hpp"
+
 
 Cell::Cell(int x, int y)
 {
@@ -10,18 +11,38 @@ Cell::Cell(int x, int y)
 
 void Cell::checkObject(IObjects *obj)
 {
-    if (obj->getPosition().first == _x && obj->getPosition().second == _y)
+    if (IControlable* cobj = dynamic_cast<IControlable*>(obj))
     {
-        _isWalkable = false;
-        _obj = obj;
-        _cellObj = obj->getObjectSymbol();
+        if (obj->getPosition().first == _x && obj->getPosition().second == _y)
+        {
+            std::cout << "cobj bukan obj" << std::endl;
+            _isWalkable = false;
+            _cobj = dynamic_cast<IControlable*>(obj);
+            _cellObj = obj->getObjectSymbol();
+        }
+        else
+        {
+            _isWalkable = true;
+            _cobj = nullptr;
+            _cellObj = WALKABLE;
+        }
     }
     else
     {
-        _isWalkable = true;
-        _obj = nullptr;
-        _cellObj = WALKABLE;
+        if (obj->getPosition().first == _x && obj->getPosition().second == _y)
+        {
+            _isWalkable = false;
+            _obj = obj;
+            _cellObj = obj->getObjectSymbol();
+        }
+        else
+        {
+            _isWalkable = true;
+            _obj = nullptr;
+            _cellObj = WALKABLE;
+        }
     }
+    
 }
 
 void Cell::setToBlankCell()
