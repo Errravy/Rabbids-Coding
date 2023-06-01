@@ -11,9 +11,9 @@ class Cell
 private:
     int _x;
     int _y;
-    IObjects *_obj;
-    IControlable* _cobj;
-    std::string _cellObj;
+    IObjects *_currentObject;
+    IControlable *_currentControlableObject;
+    std::string _cellObjectSymbol;
 
     bool _isWalkable = true;
 
@@ -22,9 +22,9 @@ public:
 
     void checkObject(IObjects *);
     void setToBlankCell();
-    std::string getCellObj();
-    IObjects *getObject();
-    IObjects* getCobj();
+    std::string getCellObjectSymbol();
+    IObjects *getCurrentObject();
+    IObjects *getCurrentControlableObject();
     bool isWalkable();
     bool isBlocked();
 };

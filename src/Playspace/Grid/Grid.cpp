@@ -26,11 +26,11 @@ void Grid::generateGrid()
 
 void Grid::checkCell(IObjects *obj)
 {
-    if(IControlable* cobj = dynamic_cast<IControlable*>(obj))
+    if (IControlable *controlable = dynamic_cast<IControlable *>(obj))
     {
-        checkCobj(obj);
+        checkControlableObject(controlable);
     }
-    
+
     if (obj->getPosition().first < _width && obj->getPosition().second < _height)
     {
         _cells[obj->getPosition()]->checkObject(obj);
@@ -41,7 +41,7 @@ void Grid::checkCell(IObjects *obj)
     }
 }
 
-void Grid::checkCobj(IObjects* obj)
+void Grid::checkControlableObject(IObjects *obj)
 {
     if (_previousCell == nullptr)
     {

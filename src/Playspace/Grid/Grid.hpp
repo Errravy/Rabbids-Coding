@@ -18,7 +18,7 @@ private:
 
     void initializeGridAndCell(int, int);
     void generateGrid();
-    void checkCobj(IObjects* obj);
+    void checkControlableObject(IObjects* obj);
 
 public:
     Grid(int, int);

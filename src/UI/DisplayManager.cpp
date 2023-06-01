@@ -47,7 +47,7 @@ void DisplayManager::renderLevel(Level *level)
                     }
                     else
                     {
-                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getCurrentControlableObject()))
                         {
                             setConsoleColor(BLUE);
 
@@ -87,38 +87,38 @@ void DisplayManager::renderLevel(Level *level)
                 if (currentCell->isWalkable())
                 {
                     setConsoleColor(GREEN);
-                    std::cout << "   " << currentCell->getCellObj() << "   ";
+                    std::cout << "   " << currentCell->getCellObjectSymbol() << "   ";
                 }
                 else
                 {
                     if (currentCell->isBlocked())
                     {
                         setConsoleColor(DEFAULT);
-                        std::cout << "   " << currentCell->getCellObj() << "   ";
+                        std::cout << "   " << currentCell->getCellObjectSymbol() << "   ";
                     }
                     else
                     {
-                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getCurrentControlableObject()))
                         {
                             setConsoleColor(BLUE);
 
                             if (controlable->getDirection() == Directions::Right)
                             {
-                                std::cout << "   " << currentCell->getCellObj() << " > ";
+                                std::cout << "   " << currentCell->getCellObjectSymbol() << " > ";
                             }
                             else if (controlable->getDirection() == Directions::Left)
                             {
-                                std::cout << " < " << currentCell->getCellObj() << "   ";
+                                std::cout << " < " << currentCell->getCellObjectSymbol() << "   ";
                             }
                             else
                             {
-                                std::cout << "   " << currentCell->getCellObj() << "   ";
+                                std::cout << "   " << currentCell->getCellObjectSymbol() << "   ";
                             }
                         }
                         else
                         {
                             setConsoleColor(RED);
-                            std::cout << "   " << currentCell->getCellObj() << "   ";
+                            std::cout << "   " << currentCell->getCellObjectSymbol() << "   ";
                         }
                     }
                 }
@@ -155,7 +155,7 @@ void DisplayManager::renderLevel(Level *level)
                     }
                     else
                     {
-                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getObject()))
+                        if (IControlable *controlable = dynamic_cast<IControlable *>(currentCell->getCurrentControlableObject()))
                         {
                             setConsoleColor(BLUE);
 
