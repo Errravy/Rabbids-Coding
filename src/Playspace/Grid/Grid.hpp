@@ -4,6 +4,7 @@
 #include <map>
 
 #include "../../Objects/IObjects.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 #include "../Cell/Cell.hpp"
 
 class Grid
@@ -17,6 +18,7 @@ private:
 
     void initializeGridAndCell(int, int);
     void generateGrid();
+    void checkCobj(IObjects* obj);
 
 public:
     Grid(int, int);

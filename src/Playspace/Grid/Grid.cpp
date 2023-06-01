@@ -26,6 +26,23 @@ void Grid::generateGrid()
 
 void Grid::checkCell(IObjects *obj)
 {
+    if(IControlable* cobj = dynamic_cast<IControlable*>(obj))
+    {
+        checkCobj(obj);
+    }
+    
+    if (obj->getPosition().first < _width && obj->getPosition().second < _height)
+    {
+        _cells[obj->getPosition()]->checkObject(obj);
+    }
+    else
+    {
+        std::cout << "Object is out of grid!" << std::endl;
+    }
+}
+
+void Grid::checkCobj(IObjects* obj)
+{
     if (_previousCell == nullptr)
     {
         _previousCell = _cells[obj->getPosition()];
@@ -37,17 +54,7 @@ void Grid::checkCell(IObjects *obj)
         _previousCell = _cells[obj->getPosition()];
         _previousObject = obj;
     }
-
-    if (obj->getPosition().first < _width && obj->getPosition().second < _height)
-    {
-        _cells[obj->getPosition()]->checkObject(obj);
-    }
-    else
-    {
-        std::cout << "Object is out of grid!" << std::endl;
-    }
 }
-
 int Grid::getWidth()
 {
     return _width;
