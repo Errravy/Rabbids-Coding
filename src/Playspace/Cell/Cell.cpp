@@ -10,7 +10,7 @@ Cell::Cell(int x, int y)
 
 void Cell::checkObject(IObjects *obj)
 {
-    if (IControlable* controlable = dynamic_cast<IControlable*>(obj))
+    if (IControlable *controlable = dynamic_cast<IControlable *>(obj))
     {
         if (controlable->getPosition().first == _x && controlable->getPosition().second == _y)
         {
@@ -25,19 +25,22 @@ void Cell::checkObject(IObjects *obj)
             _cellObjectSymbol = WALKABLE;
         }
     }
-    else if (obj == nullptr) return;
+    else if (obj == nullptr)
+        return;
     else
     {
         if (obj->getPosition().first == _x && obj->getPosition().second == _y)
         {
             _isWalkable = false;
             _currentObject = obj;
+            _currentControlableObject = nullptr;
             _cellObjectSymbol = obj->getObjectSymbol();
         }
         else
         {
             _isWalkable = true;
             _currentObject = nullptr;
+            _currentControlableObject = nullptr;
             _cellObjectSymbol = WALKABLE;
         }
     }
