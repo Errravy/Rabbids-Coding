@@ -106,8 +106,7 @@ void DisplayManager::renderLevel(Level *level)
 
                             if (controlable->getDirection() == Directions::Right)
                             {
-                                std::cout << "" << currentCell->getCellObjectSymbol() << " > "
-                                          << "/ " << currentCell->getCurrentObject()->getObjectSymbol() << "";
+                                std::cout << "" << currentCell->getCellObjectSymbol() << " > / " << currentCell->getCurrentObject()->getObjectSymbol() << "";
                             }
                             else if (controlable->getDirection() == Directions::Left)
                             {
