@@ -4,6 +4,7 @@
 #define BLANK " "
 
 #include "../../Objects/IObjects.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class Cell
 {
@@ -11,6 +12,7 @@ private:
     int _x;
     int _y;
     IObjects *_obj;
+    IControlable* _cobj;
     std::string _cellObj;
 
     bool _isWalkable = true;
