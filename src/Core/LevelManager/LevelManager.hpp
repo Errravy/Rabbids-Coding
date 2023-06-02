@@ -6,6 +6,8 @@
 
 #include "../../FileSystem/FileHandler.hpp"
 
+#include "../../Playspace/Grid/Grid.hpp"
+
 #include "../../Factory/Factory.hpp"
 #include "../../Enum/Converter/Converter.hpp"
 
@@ -67,6 +69,6 @@ private:
     void setupLevels();
     void createLevel(const std::string &);
     std::pair<IObjects *, bool> createNewObject(const LevelManager::LevelData::Object &);
-    ICommand *createNewCommand(IControlable *, const std::string &);
+    ICommand *createNewCommand(IControlable *, const std::string &, Grid *);
     void setObjectPosition(IObjects *, const LevelManager::LevelData::Position &);
 };

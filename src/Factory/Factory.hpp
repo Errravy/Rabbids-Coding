@@ -3,6 +3,8 @@
 #include "../Enum/Objects.hpp"
 #include "../Enum/Commands.hpp"
 
+#include "../Playspace/Grid/Grid.hpp"
+
 #include "../Objects/IObjects.hpp"
 
 #include "../Objects/Controlable/IControlable.hpp"
@@ -27,10 +29,11 @@
 #include "../Command/MoveForward/MoveForward.hpp"
 #include "../Command/TurnLeft/TurnLeft.hpp"
 #include "../Command/TurnRight/TurnRight.hpp"
+#include "../Command/Interact/Interact.hpp"
 
 class Factory
 {
 public:
     static IObjects *createObject(Objects);
-    static ICommand *createCommand(IControlable *, Commands);
+    static ICommand *createCommand(IControlable *, Commands, Grid *);
 };

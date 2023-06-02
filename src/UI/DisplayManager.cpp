@@ -2,7 +2,7 @@
 
 void DisplayManager::renderLevel(Level *level)
 {
-    system("cls");
+    // system("cls");
 
     Grid *grid = level->getGrid();
     grid->checkCell(level->getControlable());

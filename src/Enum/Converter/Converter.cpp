@@ -40,7 +40,9 @@ Commands Converter::convertStringToCommands(const std::string &commandType)
         {"Forward", Commands::Forward},
         {"Backward", Commands::Backward},
         {"Left", Commands::Left},
-        {"Right", Commands::Right}};
+        {"Right", Commands::Right},
+        {"Interact", Commands::Interact},
+    };
 
     auto it = commandMap.find(commandType);
     if (it != commandMap.end())

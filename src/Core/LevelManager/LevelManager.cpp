@@ -62,7 +62,7 @@ void LevelManager::createLevel(const std::string &levelName)
         {
             for (const auto &command : levelData._commands)
             {
-                ICommand *iCommand = createNewCommand(static_cast<IControlable *>(newObject), command);
+                ICommand *iCommand = createNewCommand(static_cast<IControlable *>(newObject), command, newLevel->getGrid());
                 static_cast<IControlable *>(newObject)->setCommand(iCommand);
             }
 
@@ -86,9 +86,9 @@ std::pair<IObjects *, bool> LevelManager::createNewObject(const LevelManager::Le
         return std::make_pair(newObject, false);
 }
 
-ICommand *LevelManager::createNewCommand(IControlable *controlable, const std::string &command)
+ICommand *LevelManager::createNewCommand(IControlable *controlable, const std::string &command, Grid *grid)
 {
-    ICommand *newCommand = Factory::createCommand(controlable, Converter::convertStringToCommands(command));
+    ICommand *newCommand = Factory::createCommand(controlable, Converter::convertStringToCommands(command), grid);
     return newCommand;
     return nullptr;
 }

@@ -8,10 +8,13 @@
 class Interact : public ICommand
 {
 private:
-    IControlable* _player;
-    Grid* _grid;
+    IControlable *_player;
+    Grid *_grid;
 
 public:
-    Interact(IControlable* player,Grid* grid);
+    Interact(IControlable *player, Grid *grid);
+
     void execute() override;
+    Commands getEnum() override;
+    std::string getCommandName() override;
 };

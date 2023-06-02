@@ -35,7 +35,7 @@ IObjects *Factory::createObject(Objects type)
     }
 }
 
-ICommand *Factory::createCommand(IControlable *controlable, Commands type)
+ICommand *Factory::createCommand(IControlable *controlable, Commands type, Grid *grid)
 {
     switch (type)
     {
@@ -47,6 +47,8 @@ ICommand *Factory::createCommand(IControlable *controlable, Commands type)
         return new TurnLeft(controlable);
     case Commands::Right:
         return new TurnRight(controlable);
+    case Commands::Interact:
+        return new Interact(controlable, grid);
     default:
         return nullptr;
     }
