@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Command\Interact\Interact.cpp" />
     <ClCompile Include="src\Command\Invoker\Invoker.cpp" />
     <ClCompile Include="src\Command\MoveBackward\MoveBackward.cpp" />
     <ClCompile Include="src\Command\MoveForward\MoveForward.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="src\Factory\Factory.cpp" />
     <ClCompile Include="src\FileSystem\FileHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Objective\Finishline\Finishline.cpp" />
     <ClCompile Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.cpp" />
     <ClCompile Include="src\Objects\Controlable\ClawRobot\ClawRobot.cpp" />
     <ClCompile Include="src\Objects\Controlable\Rabbids\Rabbids.cpp" />
@@ -52,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Command\ICommand.hpp" />
+    <ClInclude Include="src\Command\Interact\Interact.hpp" />
     <ClInclude Include="src\Command\Invoker\Invoker.hpp" />
     <ClInclude Include="src\Command\MoveBackward\MoveBackward.hpp" />
     <ClInclude Include="src\Command\MoveForward\MoveForward.hpp" />
@@ -70,6 +73,8 @@
     <ClInclude Include="src\Enum\Objects.hpp" />
     <ClInclude Include="src\Factory\Factory.hpp" />
     <ClInclude Include="src\FileSystem\FileHandler.hpp" />
+    <ClInclude Include="src\Objective\Finishline\Finishline.hpp" />
+    <ClInclude Include="src\Objective\IObjective.hpp" />
     <ClInclude Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.hpp" />
     <ClInclude Include="src\Objects\Controlable\ClawRobot\ClawRobot.hpp" />
     <ClInclude Include="src\Objects\Controlable\IControlable.hpp" />

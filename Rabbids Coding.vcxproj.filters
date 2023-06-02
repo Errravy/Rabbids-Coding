@@ -105,6 +105,12 @@
     <ClCompile Include="src\Objects\Interactable\WashingMachine\WashingMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Command\Interact\Interact.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objective\Finishline\Finishline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Objects\IObjects.hpp">
@@ -222,6 +228,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Objects\Interactable\WashingMachine\WashingMachine.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Command\Interact\Interact.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objective\IObjective.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objective\Finishline\Finishline.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
