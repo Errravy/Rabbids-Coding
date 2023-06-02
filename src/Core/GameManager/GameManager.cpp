@@ -51,6 +51,9 @@ void GameManager::playGame()
 
             if (isObjectiveComplete)
             {
+                DisplayManager::renderLevel(_currentLevel);
+                std::this_thread::sleep_for(800ms);
+
                 _currentLevel->setCompleted(true);
             }
         }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 #include "../LevelManager/LevelManager.hpp"
 #include "../InputManager/InputManager.hpp"
@@ -10,6 +12,8 @@
 
 #include "../../Playspace/Level/Level.hpp"
 #include "../../UI/DisplayManager.hpp"
+
+using namespace std::chrono_literals;
 
 class GameManager
 {
