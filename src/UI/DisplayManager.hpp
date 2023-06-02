@@ -4,6 +4,7 @@
 #define GREEN "\x1b[47;42m"
 #define BLUE "\x1b[47;44m"
 #define CYAN "\x1b[47;46m"
+#define YELLOW "\x1b[47;43m"
 #define DEFAULT "\x1b[0m"
 
 #define RENDER_HEIGHT_MULTIPLIER 4

@@ -18,6 +18,8 @@
 #include "../../Command/MoveForward/MoveForward.hpp"
 #include "../../Command/MoveBackward/MoveBackward.hpp"
 
+#include "../../Objective/IObjective.hpp"
+
 #define LEVEL_FOLDER_PATH = "Levels"
 
 using json = nlohmann::json;
@@ -47,11 +49,18 @@ public:
             Position _position;
         };
 
+        struct Objective
+        {
+            std::string _objectiveEnum;
+            Position _position;
+        };
+
         std::string _levelName;
         std::vector<std::string> _commands;
         std::vector<Object> _objects;
         std::vector<Position> _blankCells;
         GridSize _gridSize;
+        Objective _objective;
 
         friend void from_json(const json &, LevelData &);
     };
@@ -67,8 +76,9 @@ private:
     int _currentLevelIndex;
 
     void setupLevels();
-    void createLevel(const std::string &);
+    void createNewLevel(const std::string &);
     std::pair<IObjects *, bool> createNewObject(const LevelManager::LevelData::Object &);
     ICommand *createNewCommand(IControlable *, const std::string &, Grid *);
+    IObjective *createNewObjective(IControlable *, const LevelManager::LevelData::Objective &);
     void setObjectPosition(IObjects *, const LevelManager::LevelData::Position &);
 };

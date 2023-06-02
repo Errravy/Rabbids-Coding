@@ -47,10 +47,12 @@ void GameManager::playGame()
         }
         else if (move == 9)
         {
-            _currentLevel->getInvoker()->executeCommands();
+            bool isObjectiveComplete = _currentLevel->getInvoker()->executeCommands();
 
-            // FIXME: Remove this line after implementing the objectives
-            DataPersistence::getInstance()->saveGame(_currentLevel);
+            if (isObjectiveComplete)
+            {
+                _currentLevel->setCompleted(true);
+            }
         }
 
         if (_currentLevel->isCompleted())
@@ -63,6 +65,8 @@ void GameManager::playGame()
 void GameManager::endGame()
 {
     _gameState = GameStates::NotStarted;
+    std::cout << "Congratulations! You have completed the level!" << std::endl;
+    DataPersistence::getInstance()->saveGame(_currentLevel);
 }
 
 void GameManager::loadLevel(Level *level)

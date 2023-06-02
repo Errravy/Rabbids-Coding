@@ -53,3 +53,16 @@ ICommand *Factory::createCommand(IControlable *controlable, Commands type, Grid 
         return nullptr;
     }
 }
+
+IObjective *Factory::createObjective(IControlable *controlable, Objectives type, int x, int y)
+{
+    switch (type)
+    {
+    case Objectives::FinishLine:
+        // std::pair<int, int> position = std::make_pair(x, y);
+        return new Finishline(std::make_pair(x, y), controlable);
+
+    default:
+        return nullptr;
+    }
+}

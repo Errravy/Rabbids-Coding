@@ -25,5 +25,7 @@ public:
     Invoker *getInvoker();
     IControlable *getControlable();
     void setControlable(IControlable *);
+    void setObjective(IObjective *);
     bool isCompleted();
+    void setCompleted(bool);
 };

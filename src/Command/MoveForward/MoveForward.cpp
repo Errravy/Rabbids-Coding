@@ -12,7 +12,6 @@ std::string MoveForward::getCommandName()
 
 void MoveForward::execute()
 {
-    std::cout << "MoveForward" << std::endl;
     moveByDirection();
 }
 

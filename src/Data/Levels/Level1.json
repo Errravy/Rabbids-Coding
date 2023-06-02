@@ -40,5 +40,12 @@
     "gridSize": {
         "width": 10,
         "height": 10
+    },
+    "objective": {
+        "objectiveEnum": "FinishLine",
+        "position": {
+            "x": 1,
+            "y": 1
+        }
     }
 }

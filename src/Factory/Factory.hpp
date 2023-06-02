@@ -2,8 +2,12 @@
 
 #include "../Enum/Objects.hpp"
 #include "../Enum/Commands.hpp"
+#include "../Enum/Objectives.hpp"
 
 #include "../Playspace/Grid/Grid.hpp"
+
+#include "../Objective/IObjective.hpp"
+#include "../Objective/Finishline/Finishline.hpp"
 
 #include "../Objects/IObjects.hpp"
 
@@ -36,4 +40,5 @@ class Factory
 public:
     static IObjects *createObject(Objects);
     static ICommand *createCommand(IControlable *, Commands, Grid *);
+    static IObjective *createObjective(IControlable *, Objectives, int, int);
 };

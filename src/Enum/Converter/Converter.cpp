@@ -52,3 +52,18 @@ Commands Converter::convertStringToCommands(const std::string &commandType)
 
     throw std::runtime_error("Failed to convert: " + commandType + " to Commands enum");
 }
+
+Objectives Converter::convertStringToObjectives(const std::string &objectiveType)
+{
+    static const std::unordered_map<std::string, Objectives> objectiveMap{
+        {"FinishLine", Objectives::FinishLine},
+    };
+
+    auto it = objectiveMap.find(objectiveType);
+    if (it != objectiveMap.end())
+    {
+        return it->second;
+    }
+
+    throw std::runtime_error("Failed to convert: " + objectiveType + " to Objectives enum");
+}

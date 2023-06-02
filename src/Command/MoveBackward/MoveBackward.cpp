@@ -12,7 +12,6 @@ std::string MoveBackward::getCommandName()
 
 void MoveBackward::execute()
 {
-    std::cout << "Move Backward" << std::endl;
     moveByDirection();
 }
 

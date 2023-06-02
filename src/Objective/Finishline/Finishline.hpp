@@ -6,10 +6,11 @@
 class Finishline : public IObjective
 {
 public:
-	Finishline(std::pair<int,int> position, IControlable* player);
-	bool getCondition() override;
+	Finishline(std::pair<int, int> position, IControlable *player);
+	bool checkCondition() override;
+	std::pair<int, int> getCoordinates() override;
 
 private:
-	IControlable* _player;
+	IControlable *_player;
 	std::pair<int, int> _position;
 };

@@ -52,6 +52,11 @@ void Cell::setToBlankCell()
     _cellObjectSymbol = BLANK;
 }
 
+void Cell::setToFinishLine()
+{
+    _cellObjectSymbol = FINISHLINE;
+}
+
 std::string Cell::getCellObjectSymbol()
 {
     return _cellObjectSymbol;
@@ -75,4 +80,9 @@ bool Cell::isWalkable()
 bool Cell::isBlocked()
 {
     return _cellObjectSymbol == BLANK;
+}
+
+bool Cell::isFinishLine()
+{
+    return _cellObjectSymbol == FINISHLINE;
 }

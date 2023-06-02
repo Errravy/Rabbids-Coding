@@ -35,11 +35,11 @@ void LevelManager::setupLevels()
     for (auto &&file : filePaths)
     {
         std::string fileNameWithoutExtension = file.stem().string();
-        createLevel(fileNameWithoutExtension);
+        createNewLevel(fileNameWithoutExtension);
     }
 }
 
-void LevelManager::createLevel(const std::string &levelName)
+void LevelManager::createNewLevel(const std::string &levelName)
 {
     LevelManager::LevelData levelData = FileHandler::readFromJson<LevelManager::LevelData>("Levels/" + levelName + ".json");
 
@@ -67,6 +67,9 @@ void LevelManager::createLevel(const std::string &levelName)
             }
 
             newLevel->setControlable(static_cast<IControlable *>(newObject));
+
+            IObjective *objective = createNewObjective(static_cast<IControlable *>(newObject), levelData._objective);
+            newLevel->setObjective(objective);
         }
 
         newLevel->getGrid()->checkCell(newObject);
@@ -93,6 +96,12 @@ ICommand *LevelManager::createNewCommand(IControlable *controlable, const std::s
     return nullptr;
 }
 
+IObjective *LevelManager::createNewObjective(IControlable *controlable, const LevelManager::LevelData::Objective &objective)
+{
+    IObjective *newObjective = Factory::createObjective(static_cast<IControlable *>(controlable), Converter::convertStringToObjectives(objective._objectiveEnum), objective._position._x, objective._position._y);
+    return newObjective;
+}
+
 void LevelManager::setObjectPosition(IObjects *object, const LevelManager::LevelData::Position &position)
 {
     object->setPosition(position._x, position._y);
@@ -103,6 +112,10 @@ void from_json(const json &j, LevelManager::LevelData &levelData)
     j.at("levelName").get_to(levelData._levelName);
     j.at("gridSize").at("width").get_to(levelData._gridSize._width);
     j.at("gridSize").at("height").get_to(levelData._gridSize._height);
+
+    j.at("objective").at("objectiveEnum").get_to(levelData._objective._objectiveEnum);
+    j.at("objective").at("position").at("x").get_to(levelData._objective._position._x);
+    j.at("objective").at("position").at("y").get_to(levelData._objective._position._y);
 
     for (const auto &command : j.at("commands"))
     {

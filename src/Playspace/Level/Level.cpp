@@ -51,7 +51,19 @@ void Level::setControlable(IControlable *controlable)
     _controlable = controlable;
 }
 
+void Level::setObjective(IObjective *objective)
+{
+    _invoker->setObjective(objective);
+
+    _grid->getCells()[objective->getCoordinates()]->setToFinishLine();
+}
+
 bool Level::isCompleted()
 {
-    return false;
+    return _isCompleted;
+}
+
+void Level::setCompleted(bool isCompleted)
+{
+    _isCompleted = isCompleted;
 }

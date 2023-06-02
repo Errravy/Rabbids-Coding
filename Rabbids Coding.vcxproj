@@ -70,6 +70,7 @@
     <ClInclude Include="src\Enum\Directions.hpp" />
     <ClInclude Include="src\Enum\GameStates.hpp" />
     <ClInclude Include="src\Enum\Interactables.hpp" />
+    <ClInclude Include="src\Enum\Objectives.hpp" />
     <ClInclude Include="src\Enum\Objects.hpp" />
     <ClInclude Include="src\Factory\Factory.hpp" />
     <ClInclude Include="src\FileSystem\FileHandler.hpp" />
@@ -120,7 +121,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">

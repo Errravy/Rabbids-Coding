@@ -2,6 +2,7 @@
 
 #define WALKABLE "-"
 #define BLANK " "
+#define FINISHLINE "#"
 
 #include "../../Objects/IObjects.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
@@ -22,9 +23,11 @@ public:
 
     void checkObject(IObjects *);
     void setToBlankCell();
+    void setToFinishLine();
     std::string getCellObjectSymbol();
     IObjects *getCurrentObject();
     IObjects *getCurrentControlableObject();
     bool isWalkable();
     bool isBlocked();
+    bool isFinishLine();
 };
