@@ -1,20 +1,20 @@
-#ifndef INVOKER_HPP
-#define INVOKER_HPP
+#pragma once
 
 #include <list>
 
-class ICommand {
-public:
-    virtual void execute() = 0;
-};
+#include "../ICommand.hpp"
+#include "../../Objective/IObjective.hpp"
 
-class Invoker {
+class Invoker
+{
 private:
-    std::list<ICommand*> _command;
+    std::list<ICommand *> _command;
+    IObjective *_objective;
+
 public:
     Invoker();
-    void addCommand(ICommand* command);
-    void executeCommands();
-};
 
-#endif // INVOKER_HPP
+    void addCommand(ICommand *);
+    bool executeCommands();
+    void setObjective(IObjective *);
+};

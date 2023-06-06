@@ -1,41 +1,22 @@
 #pragma once
+
 #include "../IControlable.hpp"
-#include "../../../Enums/Commands.hpp"
-#include "../../../Enums/Directions.hpp"
 #include "../../../Command/ICommand.hpp"
-#include <iostream>
-#include <unordered_map>
-#include <utility>
+
 class Rabbids : public IControlable
 {
-private:
-    std::string objectSymbol = "A";
-    std::unordered_map<Commands, ICommand *> _Command;
-    int _x;
-    int _y;
-    Directions _z;
-    bool _isSucked;
-
 public:
     Rabbids();
 
-    void setCommand(ICommand *command);
+    void setPositionX(int) override;
+    void setPositionY(int) override;
+    void setPosition(int, int) override;
+    std::pair<int, int> getPosition() override;
+    std::string getObjectSymbol() override;
 
-    ICommand *getCommand(Commands commands);
-
-    void setPosition(int x, int y);
-
-    void setPositionX(int x);
-
-    void setPositionY(int y);
-
-    std::pair<int, int> getPosition();
-
-    void setDirection(int direction);
-
-    Directions getDirection();
-
-    bool isSucked();
-
-    std::string getObjectSymbol();
+    ICommand *setCommand(ICommand *) override;
+    ICommand *getCommand(Commands) override;
+    std::vector<std::string> getCommands() override;
+    void setDirection(int) override;
+    Directions getDirection() override;
 };

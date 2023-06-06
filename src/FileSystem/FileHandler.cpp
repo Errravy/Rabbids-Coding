@@ -1,20 +1,14 @@
 #include "FileHandler.hpp"
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <map>
 
-std::string FileHandler::relativePath = "./Data";
-
-std::string FileHandler::GetAbsolutePath(const std::string &folderName)
+fs::path FileHandler::getRelativePath(const std::string &filePath)
 {
-    return relativePath + "/" + folderName;
+    return fs::current_path() / "src" / "Data" / filePath;
 }
 
-std::vector<fs::path> FileHandler::GetAllLevelFiles(const std::string &folderName)
+std::vector<fs::path> FileHandler::getAllFilesInDirectory(const std::string &fileDirectory)
 {
     std::vector<fs::path> filePaths;
-    std::string directoryPath = GetAbsolutePath(folderName);
+    fs::path directoryPath = getRelativePath(fileDirectory);
 
     for (const auto &entry : fs::directory_iterator(directoryPath))
     {
@@ -28,109 +22,44 @@ std::vector<fs::path> FileHandler::GetAllLevelFiles(const std::string &folderNam
 }
 
 template <typename T>
-T FileHandler::ReadFromJson(const std::string &filePath)
+T FileHandler::readFromJson(const std::string &filePath)
 {
-    std::ifstream fileStream(GetAbsolutePath(filePath));
-    if (!fileStream.is_open())
+    std::ifstream file(getRelativePath(filePath));
+
+    if (file.is_open())
     {
-        throw std::runtime_error("Failed to open file: " + filePath);
+        json jsonData;
+        file >> jsonData;
+        return jsonData.get<T>();
     }
 
-    std::ostringstream oss;
-    oss << fileStream.rdbuf();
-    std::string jsonContent = oss.str();
-
-    fileStream.close();
-
-    // Deserialize JSON string using custom implementation
-    T data = CustomJson::Deserialize<T>(jsonContent);
-
-    return data;
+    throw std::runtime_error("Failed to open file: " + filePath);
 }
 
 template <typename T>
-void FileHandler::WriteToJson(const std::string &filePath, const T &data)
+void FileHandler::writeToJson(const std::string &filePath, const T &data)
 {
-    std::ofstream fileStream(GetAbsolutePath(filePath));
-    if (!fileStream.is_open())
+    std::ifstream file(getRelativePath(filePath));
+
+    if (file.is_open())
     {
+        json jsonData;
+        file >> jsonData;
+
+        std::ofstream outputFile(getRelativePath(filePath));
+
+        if (outputFile.is_open())
+        {
+            json newData = data;
+            jsonData["datas"].push_back(newData);
+
+            outputFile << jsonData.dump(4);
+            return;
+        }
+
         throw std::runtime_error("Failed to open file: " + filePath);
     }
-
-    // Serialize data to JSON string using custom implementation
-    std::string jsonContent = CustomJson::Serialize(data);
-
-    fileStream << jsonContent;
-    fileStream.close();
 }
 
-namespace CustomJson
-{
-    // Serialize an object to JSON format
-    std::string Serialize(const std::map<std::string, std::string> &data)
-    {
-        std::ostringstream oss;
-        oss << "{";
-        bool first = true;
-        for (const auto &[key, value] : data)
-        {
-            if (!first)
-            {
-                oss << ",";
-            }
-            oss << "\"" << key << "\":\"" << value << "\"";
-            first = false;
-        }
-        oss << "}";
-        return oss.str();
-    }
-
-    // Deserialize a JSON string to an object
-    std::map<std::string, std::string> Deserialize(const std::string &json)
-    {
-        std::map<std::string, std::string> data;
-        std::string key, value;
-        bool isKey = false;
-        bool isValue = false;
-        bool inString = false;
-        for (char c : json)
-        {
-            if (c == '"')
-            {
-                inString = !inString;
-            }
-            else if (inString)
-            {
-                if (isKey)
-                {
-                    key += c;
-                }
-                else if (isValue)
-                {
-                    value += c;
-                }
-            }
-            else
-            {
-                if (c == ':')
-                {
-                    isKey = false;
-                    isValue = true;
-                }
-                else if (c == ',')
-                {
-                    data[key] = value;
-                    key.clear();
-                    value.clear();
-                    isKey = true;
-                    isValue = false;
-                }
-            }
-        }
-        if (!key.empty() && !value.empty())
-        {
-            data[key] = value;
-        }
-        return data;
-    }
-}
+template LevelManager::LevelData FileHandler::readFromJson<LevelManager::LevelData>(const std::string &);
+template void FileHandler::writeToJson<DataPersistence::GameData>(const std::string &, const DataPersistence::GameData &);

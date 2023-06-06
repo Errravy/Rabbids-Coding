@@ -1,0 +1,51 @@
+{
+    "levelName": "Level 2",
+    "commands": ["Forward", "Backward", "Left"],
+    "objects": [
+        {
+            "objectEnum": "Controlable",
+            "objectType": "Rabbids",
+            "position": {
+                "x": 1,
+                "y": 1
+            }
+        },
+        {
+            "objectEnum": "Interactable",
+            "objectType": "Button",
+            "position": {
+                "x": 3,
+                "y": 5
+            }
+        },
+        {
+            "objectEnum": "Object",
+            "objectType": "Bag",
+            "position": {
+                "x": 5,
+                "y": 5
+            }
+        }
+    ],
+    "blankCells": [
+        {
+            "x": 3,
+            "y": 9
+        },
+        {
+            "x": 1,
+            "y": 4
+        }
+    ],
+    "gridSize": {
+        "width": 10,
+        "height": 10
+    },
+    "objective": {
+        "objectiveEnum": "FinishLine",
+        "position": {
+            "x": 2,
+            "y": 2
+        }
+    }
+}

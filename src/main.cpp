@@ -1,21 +1,13 @@
 #include <iostream>
-#include "Objects/Factory/ObjectFactory.hpp"
-#include "Objects/Interactable/IInteractable.hpp"
-#include <typeinfo>
-// #include "./Objects/Factory/ObjectFactory.hpp"
 
-using namespace std;
+#include "Core/GameManager/GameManager.hpp"
 
 int main()
 {
-  IObjects *button = ObjectFactory::createObject(Objects::button);
-  if (IInteractable *interactableButton = static_cast<IInteractable *>(button))
-  {
-    interactableButton->react();
-  }
-  else
-  {
-    cout << "Not Interactable" << endl;
-  }
-  return 0;
+	std::cout << "===== Welcome to Rabbids Coding lite =====" << std::endl;
+	std::cout << "=====  Press any key to start game   =====" << std::endl;
+	std::cin.get();
+
+	GameManager *gameManager = new GameManager();
+	gameManager->startGame();
 }

@@ -1,31 +1,30 @@
-#ifndef GRID_H
-#define GRID_H
+#pragma once
 
 #include <iostream>
-#include <string>
 #include <map>
-#include "../Cell/Cell.hpp"
+
 #include "../../Objects/IObjects.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
+#include "../Cell/Cell.hpp"
 
-class Grid {
+class Grid
+{
 private:
-    int width;
-    int height;
-    std::string** grid;
-    std::map<std::pair<int, int>, Cell*> cells;
+    int _width;
+    int _height;
+    std::map<std::pair<int, int>, Cell *> _cells;
+    Cell *_previousCell;
+    IObjects *_previousObject;
 
-    Cell* previousCell;
-    IObjects* previousObject;
+    void initializeGridAndCell(int, int);
+    void generateGrid();
+    void checkControlableObject(IObjects* obj);
 
 public:
-    Grid(int width, int height);
-    void InitializeGridAndCell(int width, int height);
-    void GenerateGrid();
-    void CheckCell(IObjects* obj);
-    void CheckGridPos(int x, int y);
-    int GetWidth();
-    int GetHeight();
-    std::map<std::pair<int, int>, Cell*> GetCells();
-};
+    Grid(int, int);
 
-#endif // GRID_H
+    void checkCell(IObjects *);
+    int getWidth();
+    int getHeight();
+    std::map<std::pair<int, int>, Cell *> getCells();
+};

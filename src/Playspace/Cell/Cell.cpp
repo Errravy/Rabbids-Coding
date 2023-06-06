@@ -4,49 +4,85 @@ Cell::Cell(int x, int y)
 {
     _x = x;
     _y = y;
-    _obj = nullptr;
-    _cellObj = _walkable;
+    _currentObject = nullptr;
+    _cellObjectSymbol = WALKABLE;
 }
 
 void Cell::checkObject(IObjects *obj)
 {
-    if (obj->getPosition().first == _x && obj->getPosition().second == _y)
+    if (IControlable *controlable = dynamic_cast<IControlable *>(obj))
     {
-        _isWalkable = false;
-        std::cout << "Cell " << _x << " " << _y << " is not walkable because " << obj << " inside it!" << std::endl;
-        _obj = obj;
-        _cellObj = obj->getObjectSymbol();
+        if (controlable->getPosition().first == _x && controlable->getPosition().second == _y)
+        {
+            _isWalkable = false;
+            _currentControlableObject = controlable;
+            _cellObjectSymbol = controlable->getObjectSymbol();
+        }
+        else
+        {
+            _isWalkable = true;
+            _currentControlableObject = nullptr;
+            _cellObjectSymbol = WALKABLE;
+        }
     }
+    else if (obj == nullptr)
+        return;
     else
     {
-        _isWalkable = true;
-        _obj = nullptr;
-        _cellObj = _walkable;
+        if (obj->getPosition().first == _x && obj->getPosition().second == _y)
+        {
+            _isWalkable = false;
+            _currentObject = obj;
+            _currentControlableObject = nullptr;
+            _cellObjectSymbol = obj->getObjectSymbol();
+        }
+        else
+        {
+            _isWalkable = true;
+            _currentObject = nullptr;
+            _currentControlableObject = nullptr;
+            _cellObjectSymbol = WALKABLE;
+        }
     }
 }
 
 void Cell::setToBlankCell()
 {
     _isWalkable = false;
-    _cellObj = _blank;
+    _cellObjectSymbol = BLANK;
 }
 
-std::string Cell::getCellObj()
+void Cell::setToFinishLine()
 {
-    return _cellObj;
+    _cellObjectSymbol = FINISHLINE;
 }
 
-IObjects *Cell::getObject()
+std::string Cell::getCellObjectSymbol()
 {
-    return _obj;
+    return _cellObjectSymbol;
+}
+
+IObjects *Cell::getCurrentObject()
+{
+    return _currentObject;
+}
+
+IObjects *Cell::getCurrentControlableObject()
+{
+    return _currentControlableObject;
 }
 
 bool Cell::isWalkable()
 {
-    return isWalkable;
+    return _isWalkable;
 }
 
 bool Cell::isBlocked()
 {
-    return _cellObj == _blank;
+    return _cellObjectSymbol == BLANK;
+}
+
+bool Cell::isFinishLine()
+{
+    return _cellObjectSymbol == FINISHLINE;
 }

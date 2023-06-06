@@ -1,5 +1,6 @@
 #pragma once
-#include "ICommand.hpp"
+
+#include "../ICommand.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
 
 class MoveBackward : public ICommand
@@ -9,7 +10,9 @@ private:
     void moveByDirection();
 
 public:
-    MoveBackward(IControlable *cObj);
-    void execute();
-    Commands getEnum();
+    MoveBackward(IControlable *);
+
+    void execute() override;
+    Commands getEnum() override;
+    std::string getCommandName() override;
 };

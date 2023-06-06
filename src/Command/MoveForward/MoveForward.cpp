@@ -5,6 +5,11 @@ MoveForward::MoveForward(IControlable *cObj)
     _cObj = cObj;
 }
 
+std::string MoveForward::getCommandName()
+{
+    return "Move Forward";
+}
+
 void MoveForward::execute()
 {
     moveByDirection();

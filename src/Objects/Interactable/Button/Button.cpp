@@ -4,7 +4,7 @@ Button::Button()
 {
     _x = 0;
     _y = 0;
-    _isSucked = false;
+    _objectSymbol = "I";
 }
 
 void Button::setPositionX(int x)
@@ -23,22 +23,17 @@ void Button::setPosition(int x, int y)
     _y = y;
 }
 
-void Button::react()
-{
-    std::cout << "IdleRabbid activated!" << std::endl;
-}
-
 std::pair<int, int> Button::getPosition()
 {
     return std::make_pair(_x, _y);
 }
 
-bool Button::isSucked()
-{
-    return _isSucked;
-}
-
 std::string Button::getObjectSymbol()
 {
-    return objectSymbol;
+    return _objectSymbol;
+}
+
+void Button::react()
+{
+    std::cout << "Button activated!" << std::endl;
 }

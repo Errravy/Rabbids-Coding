@@ -1,20 +1,18 @@
-#ifndef TURNRIGHT_HPP
-#define TURNRIGHT_HPP
+#pragma once
 
-#include "ICommand.hpp"
+#include "../ICommand.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
 
-class TurnRight : public ICommand {
+class TurnRight : public ICommand
+{
 private:
+    IControlable *_cObj;
     void rotate();
-    IControlable* _cObj;
 
 public:
-    TurnRight(IControlable* cObj);
+    TurnRight(IControlable *);
 
     void execute() override;
     Commands getEnum() override;
-
+    std::string getCommandName() override;
 };
-
-#endif /* TURNRIGHT_HPP */

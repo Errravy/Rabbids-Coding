@@ -1,9 +1,13 @@
 #include "MoveBackward.hpp"
-#include <iostream>
 
 MoveBackward::MoveBackward(IControlable *cObj)
 {
     _cObj = cObj;
+}
+
+std::string MoveBackward::getCommandName()
+{
+    return "Move Backward";
 }
 
 void MoveBackward::execute()

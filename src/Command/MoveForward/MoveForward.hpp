@@ -1,12 +1,18 @@
-#include "ICommand.hpp"
+#pragma once
+
+#include "../ICommand.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
-class MoveForward : public ICommand {
+
+class MoveForward : public ICommand
+{
 private:
-    IControlable* _cObj;
+    IControlable *_cObj;
     void moveByDirection();
 
 public:
-    MoveForward(IControlable* cObj);
+    MoveForward(IControlable *);
+
     void execute() override;
     Commands getEnum() override;
+    std::string getCommandName() override;
 };

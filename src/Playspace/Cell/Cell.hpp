@@ -1,32 +1,33 @@
 #pragma once
 
-#ifndef CELL_H
-#define CELL_H
+#define WALKABLE "-"
+#define BLANK " "
+#define FINISHLINE "#"
 
-#include <iostream>
-#include <string>
 #include "../../Objects/IObjects.hpp"
+#include "../../Objects/Controlable/IControlable.hpp"
 
 class Cell
 {
 private:
     int _x;
     int _y;
-    IObjects *_obj;
-    std::string _cellObj;
+    IObjects *_currentObject;
+    IControlable *_currentControlableObject;
+    std::string _cellObjectSymbol;
 
     bool _isWalkable = true;
-    const std::string _walkable = "-";
-    const std::string _blank = " ";
 
 public:
-    Cell(int x, int y);
-    void checkObject(IObjects *obj);
+    Cell(int, int);
+
+    void checkObject(IObjects *);
     void setToBlankCell();
-    std::string getCellObj();
-    IObjects *getObject();
+    void setToFinishLine();
+    std::string getCellObjectSymbol();
+    IObjects *getCurrentObject();
+    IObjects *getCurrentControlableObject();
     bool isWalkable();
     bool isBlocked();
+    bool isFinishLine();
 };
-
-#endif

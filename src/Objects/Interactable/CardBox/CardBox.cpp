@@ -4,7 +4,7 @@ CardBox::CardBox()
 {
     _x = 0;
     _y = 0;
-    _isSucked = false;
+    _objectSymbol = "I";
 }
 
 void CardBox::setPositionX(int x)
@@ -23,22 +23,17 @@ void CardBox::setPosition(int x, int y)
     _y = y;
 }
 
-void CardBox::react()
-{
-    std::cout << "IdleRabbid activated!" << std::endl;
-}
-
 std::pair<int, int> CardBox::getPosition()
 {
     return std::make_pair(_x, _y);
 }
 
-bool CardBox::isSucked()
-{
-    return _isSucked;
-}
-
 std::string CardBox::getObjectSymbol()
 {
-    return objectSymbol;
+    return _objectSymbol;
+}
+
+void CardBox::react()
+{
+    std::cout << "CardBox activated!" << std::endl;
 }

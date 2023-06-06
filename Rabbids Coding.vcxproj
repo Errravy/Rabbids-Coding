@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Command\Interact\Interact.cpp" />
+    <ClCompile Include="src\Command\Invoker\Invoker.cpp" />
+    <ClCompile Include="src\Command\MoveBackward\MoveBackward.cpp" />
+    <ClCompile Include="src\Command\MoveForward\MoveForward.cpp" />
+    <ClCompile Include="src\Command\TurnLeft\TurnLeft.cpp" />
+    <ClCompile Include="src\Command\TurnRight\TurnRight.cpp" />
+    <ClCompile Include="src\Core\DataPersistence\DataPersistence.cpp" />
+    <ClCompile Include="src\Core\GameManager\GameManager.cpp" />
+    <ClCompile Include="src\Core\InputManager\InputManager.cpp" />
+    <ClCompile Include="src\Core\LevelManager\LevelManager.cpp" />
+    <ClCompile Include="src\Enum\Converter\Converter.cpp" />
+    <ClCompile Include="src\Factory\Factory.cpp" />
+    <ClCompile Include="src\FileSystem\FileHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Objective\Finishline\Finishline.cpp" />
+    <ClCompile Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.cpp" />
+    <ClCompile Include="src\Objects\Controlable\ClawRobot\ClawRobot.cpp" />
+    <ClCompile Include="src\Objects\Controlable\Rabbids\Rabbids.cpp" />
+    <ClCompile Include="src\Objects\Controlable\VacuumRobot\VacuumRobot.cpp" />
+    <ClCompile Include="src\Objects\Interactable\Bag\Bag.cpp" />
+    <ClCompile Include="src\Objects\Interactable\Button\Button.cpp" />
+    <ClCompile Include="src\Objects\Interactable\CardBox\CardBox.cpp" />
+    <ClCompile Include="src\Objects\Interactable\ElectricFence\ElectricFence.cpp" />
+    <ClCompile Include="src\Objects\Interactable\IdleRabbids\IdleRabbids.cpp" />
+    <ClCompile Include="src\Objects\Interactable\Plunger\Plunger.cpp" />
+    <ClCompile Include="src\Objects\Interactable\Saw\Saw.cpp" />
+    <ClCompile Include="src\Objects\Interactable\Tissue\Tissue.cpp" />
+    <ClCompile Include="src\Objects\Interactable\WashingMachine\WashingMachine.cpp" />
+    <ClCompile Include="src\Playspace\Cell\Cell.cpp" />
+    <ClCompile Include="src\Playspace\Grid\Grid.cpp" />
+    <ClCompile Include="src\Playspace\Level\Level.cpp" />
+    <ClCompile Include="src\UI\DisplayManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Command\ICommand.hpp" />
+    <ClInclude Include="src\Command\Interact\Interact.hpp" />
+    <ClInclude Include="src\Command\Invoker\Invoker.hpp" />
+    <ClInclude Include="src\Command\MoveBackward\MoveBackward.hpp" />
+    <ClInclude Include="src\Command\MoveForward\MoveForward.hpp" />
+    <ClInclude Include="src\Command\TurnLeft\TurnLeft.hpp" />
+    <ClInclude Include="src\Command\TurnRight\TurnRight.hpp" />
+    <ClInclude Include="src\Core\DataPersistence\DataPersistence.hpp" />
+    <ClInclude Include="src\Core\GameManager\GameManager.hpp" />
+    <ClInclude Include="src\Core\InputManager\InputManager.hpp" />
+    <ClInclude Include="src\Core\LevelManager\LevelManager.hpp" />
+    <ClInclude Include="src\Enum\Commands.hpp" />
+    <ClInclude Include="src\Enum\Controlables.hpp" />
+    <ClInclude Include="src\Enum\Converter\Converter.hpp" />
+    <ClInclude Include="src\Enum\Directions.hpp" />
+    <ClInclude Include="src\Enum\GameStates.hpp" />
+    <ClInclude Include="src\Enum\Interactables.hpp" />
+    <ClInclude Include="src\Enum\Objectives.hpp" />
+    <ClInclude Include="src\Enum\Objects.hpp" />
+    <ClInclude Include="src\Factory\Factory.hpp" />
+    <ClInclude Include="src\FileSystem\FileHandler.hpp" />
+    <ClInclude Include="src\Objective\Finishline\Finishline.hpp" />
+    <ClInclude Include="src\Objective\IObjective.hpp" />
+    <ClInclude Include="src\Objects\Controlable\ArmedRabbids\ArmedRabbids.hpp" />
+    <ClInclude Include="src\Objects\Controlable\ClawRobot\ClawRobot.hpp" />
+    <ClInclude Include="src\Objects\Controlable\IControlable.hpp" />
+    <ClInclude Include="src\Objects\Controlable\Rabbids\Rabbids.hpp" />
+    <ClInclude Include="src\Objects\Controlable\VacuumRobot\VacuumRobot.hpp" />
+    <ClInclude Include="src\Objects\Interactable\Bag\Bag.hpp" />
+    <ClInclude Include="src\Objects\Interactable\Button\Button.hpp" />
+    <ClInclude Include="src\Objects\Interactable\CardBox\CardBox.hpp" />
+    <ClInclude Include="src\Objects\Interactable\ElectricFence\ElectricFence.hpp" />
+    <ClInclude Include="src\Objects\Interactable\IdleRabbids\IdleRabbids.hpp" />
+    <ClInclude Include="src\Objects\Interactable\IInteractable.hpp" />
+    <ClInclude Include="src\Objects\Interactable\Plunger\Plunger.hpp" />
+    <ClInclude Include="src\Objects\Interactable\Saw\Saw.hpp" />
+    <ClInclude Include="src\Objects\Interactable\Tissue\Tissue.hpp" />
+    <ClInclude Include="src\Objects\Interactable\WashingMachine\WashingMachine.hpp" />
+    <ClInclude Include="src\Objects\IObjects.hpp" />
+    <ClInclude Include="src\Playspace\Cell\Cell.hpp" />
+    <ClInclude Include="src\Playspace\Grid\Grid.hpp" />
+    <ClInclude Include="src\Playspace\Level\Level.hpp" />
+    <ClInclude Include="src\UI\DisplayManager.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a3eef994-69c6-4140-979d-f1813bfe020e}</ProjectGuid>
+    <RootNamespace>RabbidsCoding</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -4,7 +4,7 @@ Tissue::Tissue()
 {
     _x = 0;
     _y = 0;
-    _isSucked = false;
+    _objectSymbol = "I";
 }
 
 void Tissue::setPositionX(int x)
@@ -23,22 +23,18 @@ void Tissue::setPosition(int x, int y)
     _y = y;
 }
 
-void Tissue::react()
-{
-    std::cout << "IdleRabbid activated!" << std::endl;
-}
-
 std::pair<int, int> Tissue::getPosition()
 {
     return std::make_pair(_x, _y);
 }
 
-bool Tissue::isSucked()
-{
-    return _isSucked;
-}
-
 std::string Tissue::getObjectSymbol()
 {
-    return objectSymbol;
+    return _objectSymbol;
+}
+
+void Tissue::react()
+{
+    std::cout << "Tissue destroyed!!!" << std::endl;
+    self.reset();
 }

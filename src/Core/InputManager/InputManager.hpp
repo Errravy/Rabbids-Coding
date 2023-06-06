@@ -1,8 +1,10 @@
+#pragma once
+
+#include <iostream>
+
 class InputManager
 {
-private:
-    /* data */
 public:
-    InputManager(/* args */) {}
-    ~InputManager() {}
+    static int getMove();
+    static int getLevelIndex(int maxLevelIndex);
 };

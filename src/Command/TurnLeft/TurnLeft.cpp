@@ -1,7 +1,13 @@
 #include "TurnLeft.hpp"
+
 TurnLeft::TurnLeft(IControlable *cObj)
 {
     _cObj = cObj;
+}
+
+std::string TurnLeft::getCommandName()
+{
+    return "Turn Left";
 }
 
 void TurnLeft::execute()

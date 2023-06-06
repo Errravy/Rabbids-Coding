@@ -1,60 +1,75 @@
 #include "Grid.hpp"
 
-Grid::Grid(int width, int height) {
-    InitializeGridAndCell(width, height);
-    GenerateGrid();
+Grid::Grid(int width, int height)
+{
+    initializeGridAndCell(width, height);
+    generateGrid();
 }
 
-void Grid::InitializeGridAndCell(int width, int height) {
-    this->width = width;
-    this->height = height;
-    grid = new std::string*[width];
-    for (int x = 0; x < width; x++) {
-        grid[x] = new std::string[height];
-    }
+void Grid::initializeGridAndCell(int width, int height)
+{
+    _width = width;
+    _height = height;
+    _cells = std::map<std::pair<int, int>, Cell *>();
 }
 
-void Grid::GenerateGrid() {
-    int temp = 0;
-    for (int x = 0; x < width; x++) {
-        for (int y = 0; y < height; y++) {
-            temp++;
-            grid[x][y] = std::to_string(temp);
-            cells[std::make_pair(x, y)] = new Cell(x, y);
+void Grid::generateGrid()
+{
+    for (int x = 0; x < _width; x++)
+    {
+        for (int y = 0; y < _height; y++)
+        {
+            _cells.insert(std::make_pair(std::make_pair(x, y), new Cell(x, y)));
         }
     }
 }
 
-void Grid::CheckCell(IObjects* obj) {
-    if (previousCell == nullptr) {
-        previousCell = cells[obj->getPosition()];
-        previousObject = obj;
-    } else {
-        previousCell->checkObject(previousObject);
-        previousCell = cells[obj->getPosition()];
-        previousObject = obj;
+void Grid::checkCell(IObjects *obj)
+{
+    if (IControlable *controlable = dynamic_cast<IControlable *>(obj))
+    {
+        checkControlableObject(controlable);
     }
 
-    std::pair<int, int> position = obj->getPosition();
-    if (position.first < width && position.second < height) {
-        cells[position]->checkObject(obj);
-    } else {
+    if (obj->getPosition().first < _width && obj->getPosition().second < _height)
+    {
+        _cells[obj->getPosition()]->checkObject(obj);
+    }
+    else
+    {
         std::cout << "Object is out of grid!" << std::endl;
     }
 }
 
-void Grid::CheckGridPos(int x, int y) {
-    std::cout << grid[x][y] << std::endl;
+void Grid::checkControlableObject(IObjects *obj)
+{
+    if (_previousCell == nullptr)
+    {
+        _previousCell = _cells[obj->getPosition()];
+        _previousObject = obj;
+    }
+    else
+    {
+        if (_previousCell->getCurrentObject() != nullptr)
+            _previousCell->checkObject(_previousCell->getCurrentObject());
+        else
+            _previousCell->checkObject(_previousObject);
+
+        _previousCell = _cells[obj->getPosition()];
+        _previousObject = obj;
+    }
+}
+int Grid::getWidth()
+{
+    return _width;
 }
 
-int Grid::GetWidth() {
-    return width;
+int Grid::getHeight()
+{
+    return _height;
 }
 
-int Grid::GetHeight() {
-    return height;
-}
-
-std::map<std::pair<int, int>, Cell*> Grid::GetCells() {
-    return cells;
+std::map<std::pair<int, int>, Cell *> Grid::getCells()
+{
+    return _cells;
 }

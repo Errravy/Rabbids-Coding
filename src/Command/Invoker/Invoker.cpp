@@ -1,14 +1,35 @@
 #include "Invoker.hpp"
 
-Invoker::Invoker() {}
+Invoker::Invoker()
+{
+    _command = std::list<ICommand *>();
+}
 
-void Invoker::addCommand(ICommand* command) {
+void Invoker::addCommand(ICommand *command)
+{
     _command.push_back(command);
 }
 
-void Invoker::executeCommands() {
-    for (auto command : _command) {
-        command->Execute();
+bool Invoker::executeCommands()
+{
+    bool isObjectiveCompleted = false;
+
+    for (ICommand *command : _command)
+    {
+        command->execute();
+
+        if (_objective->checkCondition())
+        {
+            isObjectiveCompleted = true;
+        }
     }
+
     _command.clear();
+
+    return isObjectiveCompleted;
+}
+
+void Invoker::setObjective(IObjective *objective)
+{
+    _objective = objective;
 }

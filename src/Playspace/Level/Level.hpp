@@ -1,26 +1,31 @@
-#ifndef LEVEL_H
-#define LEVEL_H
+#pragma once
 
 #include "../Grid/Grid.hpp"
-#include "../../Command/Invoker/Invoker.hpp"
 #include "../../Objects/Controlable/IControlable.hpp"
+#include "../../Command/Invoker/Invoker.hpp"
 
 class Level
 {
 private:
-    Grid grid;
-    Invoker invoker;
-    IControlable* controlable;
-    bool isCompleted;
+    std::string _levelName;
+    Grid *_grid;
+    Invoker *_invoker;
+    IControlable *_controlable;
+
+    int _score = 0;
+    bool _isCompleted = false;
 
 public:
-    Level(Invoker invoker);
-    Grid& getGrid();
-    Invoker& getInvoker();
-    void showAvailableMoves();
-    bool isCompleted();
-    void setControlable(IControlable* controlable);
-    IControlable* getControlable();
-};
+    Level(std::string, int, int, Invoker *);
 
-#endif // LEVEL_H
+    void showAvailableMoves();
+    Grid *getGrid();
+    std::string getLevelName();
+    int getScore();
+    Invoker *getInvoker();
+    IControlable *getControlable();
+    void setControlable(IControlable *);
+    void setObjective(IObjective *);
+    bool isCompleted();
+    void setCompleted(bool);
+};
